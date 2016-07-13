@@ -5,7 +5,7 @@
 		version="2.5"
 		xmlns="http://java.sun.com/xml/ns/javaee">
 
-	<display-name>frontEnd</display-name>
+	<display-name>test2UI5</display-name>
 
 	<!-- ============================================================== -->
 	<!-- UI5 resource servlet used to handle application resources      -->
@@ -80,6 +80,11 @@
 		<servlet-name>SimpleProxyServlet</servlet-name>
 		<url-pattern>/proxy/*</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>MyServlet</servlet-name>
+		<servlet-class>pk.MyServlet</servlet-class>
+	</servlet>
 
 
 	<!-- ============================================================== -->
