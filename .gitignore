@@ -18,6 +18,9 @@ buildNumber.properties
 .DS_Store
 .AppleDouble
 .LSOverride
+.settings/*
+*.classpath
+*.project
 
 # Thumbnails
 ._*
