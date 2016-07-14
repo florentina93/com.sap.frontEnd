@@ -15,10 +15,9 @@
 		</VBox>
 		
 		<VBox searchButtonPress="handlSearch">
-			<Label text="{name}frewcwf"/>
-			<Label text="{age}"/>
-			<Label text="{hometown}"/>
-			<Label text="{workspace}"/>
+			<Label text="{name}"/>
+			<Label text="{first_name}"/>
+			<Label text="{birthday}"/>
 		</VBox>
 	</Page>
 </core:View>
