@@ -35,7 +35,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 			var oModel = new sap.ui.model.json.JSONModel();
 			// load data from URL
 			oModel.loadData("http://localhost:8081/com.sap.crawler/getdata", "", false);
-			sap.ui.getCore().setModel("json",oModel);
+			sap.ui.getCore().setModel(oModel,"jsonModelName");
 			//var data = JSON.stringify(oModel.getData());				
 			var text = oModel.getData().name;
 
@@ -43,6 +43,16 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 			this.getView().byId("nametext").setText(oModel.getData().name);
 			this.getView().byId("agetext").setText(oModel.getData().age);	
 			
+			var context = evt.getSource().getBindingContext();
+			this.nav.to("Detail", context);
+			
+			console.log('evt.getSource: ' + evt.getSource());
+		    console.log('evt.getBindingContext: ' + evt.getSource().getBindingContext());
+			
+		    var list = this.getView().byId("servlet");   
+			var binding = list.getBinding("items");
+			//binding.filter(filters); 
+		    
 			console.log(oModel.getData().name);
 		}
 

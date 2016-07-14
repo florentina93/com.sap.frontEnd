@@ -37,14 +37,17 @@
 				<contentLeft>
 					<SearchField
 							id="servlet"
+							items="{/Friend}"
 							search="handleSearch1"
 							width="100%"
 							>
 					</SearchField>
 				</contentLeft>
 			</Bar>
-			
+		<VBox>
 		<Label text="nameHere" id="nametext"/>
 		<Label text="ageHere" id="agetext"/>
+		</VBox>	
+		
 	</Page>
 </core:View>
