@@ -45,8 +45,9 @@
 		</VBox>
 		<VBox>
 		<Label text="Name Here" id="nametext"/>
+		<Label text="Age Here" id="agetext"/>
 		<Label text="Firstname Here" id="firstnametext"/>
-		<Label text="hometownHere" id="hometowntext"/>
+		<Label text="HomeTown Here" id="hometowntext"/>
 		<Label text="Id Here" id="idtext"/>
 		<Label text="Birthday Here" id="birthdaytext"/>
 		<Label text="Gender Here" id="gendertext"/>
