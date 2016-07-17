@@ -34,14 +34,15 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 			// create a "json" Model
 			var oModel = new sap.ui.model.json.JSONModel();
 			// load data from URL
-			oModel.loadData("http://localhost:8081/com.sap.crawler/getdata", "", false);
+			oModel.loadData("http://localhost:8081/com.sap.crawler/testdata", "", false);
 			sap.ui.getCore().setModel(oModel,"jsonModelName");
 			//var data = JSON.stringify(oModel.getData());				
-			var text = oModel.getData().name;
+			//var text = oModel.getData().name;
 
 			//this.getView().byId("text").setText(text);	
 			this.getView().byId("nametext").setText(oModel.getData().name);
-			this.getView().byId("agetext").setText(oModel.getData().age);	
+			this.getView().byId("agetext").setText(oModel.getData().age);
+
 			
 			var context = evt.getSource().getBindingContext();
 			this.nav.to("Detail", context);

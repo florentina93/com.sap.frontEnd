@@ -14,7 +14,7 @@
 			<Text text="{FriendWorkPlace}" />
 		</VBox>
 		
-		<VBox searchButtonPress="handlSearch">
+		<VBox searchButtonPress="handleSearch">
 			<Label text="{name}frewcwf"/>
 			<Label text="{age}"/>
 			<Label text="{hometown}"/>

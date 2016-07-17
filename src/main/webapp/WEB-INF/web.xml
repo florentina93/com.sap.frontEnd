@@ -5,7 +5,7 @@
 		version="2.5"
 		xmlns="http://java.sun.com/xml/ns/javaee">
 
-	<display-name>test2UI5</display-name>
+	<display-name>Front End</display-name>
 
 	<!-- ============================================================== -->
 	<!-- UI5 resource servlet used to handle application resources      -->

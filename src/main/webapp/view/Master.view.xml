@@ -29,7 +29,6 @@
 				<contentLeft>
 					<SearchField
 							id="servlet"
-							items="{/Friend}"
 							search="handleSearch1"
 							width="100%"
 							>

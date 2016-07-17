@@ -34,21 +34,21 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 			// create a "json" Model
 			var oModel = new sap.ui.model.json.JSONModel();
 			// load data from URL
-			oModel.loadData("http://localhost:8081/com.sap.crawler/getdata", "", false);
+			oModel.loadData("http://localhost:8081/com.sap.crawler/testdata", "", false);
 			sap.ui.getCore().setModel(oModel,"jsonModelName");
 			//var data = JSON.stringify(oModel.getData());				
 			var text = oModel.getData().name;
 
 			//this.getView().byId("text").setText(text);	
 			this.getView().byId("nametext").setText(oModel.getData().name);
-			this.getView().byId("hometowntext").setText(oModel.getData().hometown.name);
-			this.getView().byId("firstnametext").setText(oModel.getData().first_name);	
-			this.getView().byId("idtext").setText(oModel.getData().id);	
-			this.getView().byId("birthdaytext").setText(oModel.getData().birthday);			
-			this.getView().byId("gendertext").setText(oModel.getData().gender);
-			this.getView().byId("sportstext").setText(oModel.getData().sports[0].name);
-			this.getView().byId("worktext").setText(oModel.getData().work[0].employer.name);
-			this.getView().byId("emailtext").setText(oModel.getData().email);
+			this.getView().byId("hometowntext").setText(oModel.getData().age);
+//			this.getView().byId("firstnametext").setText(oModel.getData().first_name);	
+//			this.getView().byId("idtext").setText(oModel.getData().id);	
+//			this.getView().byId("birthdaytext").setText(oModel.getData().birthday);			
+//			this.getView().byId("gendertext").setText(oModel.getData().gender);
+//			this.getView().byId("sportstext").setText(oModel.getData().sports[0].name);
+//			this.getView().byId("worktext").setText(oModel.getData().work[0].employer.name);
+//			this.getView().byId("emailtext").setText(oModel.getData().email);
 			
 			var context = evt.getSource().getBindingContext();
 			this.nav.to("Detail", context);
