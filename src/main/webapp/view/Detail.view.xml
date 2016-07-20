@@ -13,11 +13,5 @@
 			<Text text="{FriendAge}" />
 			<Text text="{FriendWorkPlace}" />
 		</VBox>
-		
-		<VBox searchButtonPress="handlSearch">
-			<Label text="{name}"/>
-			<Label text="{first_name}"/>
-			<Label text="{birthday}"/>
-		</VBox>
 	</Page>
 </core:View>
