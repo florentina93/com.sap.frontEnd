@@ -10,7 +10,7 @@ sap.ui.jsview("sap.ui.demo.myFiori.view.App", {
 		this.setDisplayBlock(true);
 		
 		// create app
-		this.app = new sap.m.SplitApp();
+		this.app = new sap.m.SplitApp("splitApp",{});
 		
 		// load the master page
 		var master = sap.ui.xmlview("Master", "sap.ui.demo.myFiori.view.Master");
@@ -30,3 +30,7 @@ sap.ui.jsview("sap.ui.demo.myFiori.view.App", {
 		return this.app;
 	}
 });
+
+//routing
+//controller events
+//diff ui5 - dom

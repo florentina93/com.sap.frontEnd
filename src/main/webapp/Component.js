@@ -1,7 +1,66 @@
 jQuery.sap.declare("sap.ui.demo.myFiori.Component");
+jQuery.sap.require("sap.ui.demo.myFiori.MyRouter");
+sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component",{
+	metadata:{
+		routing:{
+			config:{
+				routerClass:sap.ui.demo.myFiori.MyRouter,
+				viewType:"XML",
+				viewPath:"sap.ui.demo.myFiori.view",
+				targetControl:"splitApp",
+				clearTarger:false,
+			},
+			routes:[
+			        {
+			        	pattern:"",
+			        	name:"main",
+			        	view:"Master",
+			        	targetAggregation:"masterPages",
+			        },
+			        {
+			        	pattern:"Detail",
+			        	name:"Detail",
+			        	view:"Detail",
+			        	targetAggregation:"detailPages",
+			        	targetControl:"splitApp",
+			        },
+			        {
+			        	pattern:"userDetail/{userId}",
+			        	name:"userDetail",
+			        	view:"Detail",
+			        	targetAggregation:"detailPages",
+			        },
+			        {
+			        	pattern:"userDetailx",
+			        	name:"userDetailx",
+			        	view:"Detail",
+			        	targetAggregation:"detailPages",
+			        },
+			        ]
+		}
+	},
 
-sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
-
+	init:function(){
+		console.log("hi from inside the init method of the component");
+		jQuery.sap.require("sap.ui.demo.myFiori.MyRouter");
+		jQuery.sap.require("sap.m.routing.RouteMatchedHandler");
+		sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
+		var router = this.getRouter();
+		console.log(router);
+		
+		this.routeHandler = new sap.m.routing.RouteMatchedHandler(router);
+		console.log("before init "+this.routeHandler);
+		console.log(this.routeHandler);
+		router.initialize();
+	},
+	
+	destroy:function(){
+		if(this.routeHandler){
+			this.routeHandler.destroy();
+		}
+		sap.ui.core.UIComponent.prototype.destroy.apply(this, arguments);
+	},
+	
 	createContent : function() {
 
 		// create root view
@@ -19,13 +78,15 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
 
 		//set i18n model
 		var i18nModel = new sap.ui.model.resource.ResourceModel({
-				bundleUrl : "i18n/messageBundle.properties"
+				bundleUrl : "i18n/messageBundle.properties",
 		});
 		
 		oView.setModel(i18nModel, "i18n");
 		
 		// Using a local model for offline development
+		//var oModel = new sap.ui.model.json.JSONModel("model/mock.json");
 		var oModel = new sap.ui.model.json.JSONModel("model/mock.json");
+		//oModel.loadData("http://localhost:8081/com.sap.crawler/getdata", "", false);
 		oView.setModel(oModel);
 		
 			//set device model
