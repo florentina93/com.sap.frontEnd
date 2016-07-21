@@ -29,7 +29,6 @@
 				<contentLeft>
 					<SearchField
 							id="servlet"
-							items="{/Friend}"
 							search="handleSearch1"
 							width="100%"
 							>
@@ -43,6 +42,7 @@
 				<RadioButton id="radioname" groupName="criteria" text="Name"/>
 				<RadioButton id="radiohomeTown" groupName="criteria" text="HomeTown"/> 
 				<RadioButton id="radioworkPlace" groupName="criteria" text="WorkPlace"/>
+			</VBox>
 			
 	<!-- 	<List
 			id="list"
@@ -94,8 +94,8 @@
 				press="handleListItemPress"
 				title="{FriendName}"
 				 text="Email Here" id="emailtext"/>
-		</List>-->
-		</VBox>
+		</List>
+		</VBox>-->
 	<!-- <VBox>
 		<Label text="Name Here" id="nametext"/>
 		<Label text="Firstname Here" id="firstnametext"/>

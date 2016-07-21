@@ -1,0 +1,11 @@
+json.put("name", "Popescu");
+			json.put("age", "57");
+			json.put("job", "Programmer");
+			json.put("id", "1");
+			json.put("first_name", "Maria");
+			json.put("email", "maria@yahoo.com");
+			
+{
+"name" : "Popescu",
+
+}			
