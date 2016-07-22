@@ -12,6 +12,12 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 	onInit:function(){
 		this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 		console.log("in master "+this._oRouter);
+		
+		//Initialize model to save data from searchField needed to pass it as a parameter in backend link
+//		this.myModel = new sap.ui.model.json.JSONModel();
+//		this.myModel.setProperty("name","andi");
+//		console.log(this.myModel.getProperty("/name"));
+//		//console.log("--------------------------....----");
 	    if (sap.ui.Device.system.phone) {
 			return;
 	}
@@ -76,21 +82,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 		},
 	
 		handleSearch1 : function(evt){
-			// create a "json" Model
-			//var oModel = new sap.ui.model.json.JSONModel();
-			// load data from URL
-			//oModel.loadData("http://localhost:8081/com.sap.crawler/getdata", "", false);
-			//sap.ui.getCore().setModel(oModel,"MAIN");
-	
-//			this.getView().byId("nametext").setText(oModel.getData().name);
-//			this.getView().byId("hometowntext").setText(oModel.getData().hometown.name);
-//			this.getView().byId("firstnametext").setText(oModel.getData().first_name);	
-//			this.getView().byId("idtext").setText(oModel.getData().id);	
-//			this.getView().byId("birthdaytext").setText(oModel.getData().birthday);			
-//			this.getView().byId("gendertext").setText(oModel.getData().gender);
-//			this.getView().byId("sportstext").setText(oModel.getData().sports[0].name);
-//			this.getView().byId("worktext").setText(oModel.getData().work[0].employer.name);
-//			this.getView().byId("emailtext").setText(oModel.getData().email);
 
 			var button = this.getView().byId("radioname").getSelected();
 			
@@ -99,11 +90,15 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 			
 			console.log('evt.getSource: ' + evt.getSource());
 		    console.log('evt.getBindingContext: ' + evt.getSource().getBindingContext());
-			
-		   // var list = this.getView().byId("servlet");   
-			//var binding = list.getBinding("items");
-			//binding.filter(filters); 
 		    
+		    console.log(this.getView().byId("servlet").getValue());
+		    
+		    //Create json that contains value from searchField and save JSON in model created in init
+//		    var json = {};
+//		    json.searchValue = this.getView().byId("servlet").getValue();
+//		    this.myModel.setData(json);
+//		    console.log("Am setat jsonu");
+//		    sap.ui.getCore().setModel(this.myModel, "searchModel");
 			//console.log(oModel.getData().name);
 		}
 

@@ -43,6 +43,11 @@
 				<RadioButton id="radiohomeTown" groupName="criteria" text="HomeTown"/> 
 				<RadioButton id="radioworkPlace" groupName="criteria" text="WorkPlace"/>
 			</VBox>
+			<List
+				headerText = "Actions">
+				<ActionListItem text="Accept"/>
+			</List>
+	
 			
 	<!-- 	<List
 			id="list"
