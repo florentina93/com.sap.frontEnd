@@ -17,39 +17,39 @@
 		<VBox>
 		<HBox>
 		<Label text="Name:"/>
-		<Label text="Name Here" id="nametext"/>
+		<Label text="" id="nametext"/>
 		</HBox>
 		<HBox>
 		<Label text="First Name:"/>
-		<Label text="Firstname Here" id="firstnametext"/>
+		<Label text="" id="firstnametext"/>
 		</HBox>
 		<HBox>
 		<Label text="Hometown:"/>
-		<Label text="hometownHere" id="hometowntext"/>
+		<Label text="" id="hometowntext"/>
 		</HBox>
 		<HBox>
 		<Label text="Id:"/>
-		<Label text="Id Here" id="idtext"/>
+		<Label text="" id="idtext"/>
 		</HBox>
 		<HBox>
 		<Label text="Birthday:"/>
-		<Label text="Birthday Here" id="birthdaytext"/>
+		<Label text="" id="birthdaytext"/>
 		</HBox>
 		<HBox>
 		<Label text="Gender:"/>
-		<Label text="Gender Here" id="gendertext"/>
+		<Label text="" id="gendertext"/>
 		</HBox>
 		<HBox>
 		<Label text="Sports:"/>
-		<Label text="Sports Here" id="sportstext"/>
+		<Label text="" id="sportstext"/>
 		</HBox>
 		<HBox>
 		<Label text="Work:"/>
-		<Label text="Work Here" id="worktext"/>
+		<Label text="" id="worktext"/>
 		</HBox>
 		<HBox>
 		<Label text="Email:"/>
-		<Label text="Email Here" id="emailtext"/>
+		<Label text="" id="emailtext"/>
 		</HBox>
 		</VBox>
 	</Page>

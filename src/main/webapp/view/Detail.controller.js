@@ -70,7 +70,10 @@ sap.ui
 						// this.getView().byId("worktext").setText(oModel.getData().work[0].employer.name);
 						this.getView().byId("emailtext").setText(
 								oModel.getData().email);
-
+						
+						var id = oParameters.arguments.userId;
+							console.log(id)
+												
 						/*
 						 * //jQuery.when(this.oInitialLoadFinishedDeferred).then(jQuery.proxy(function () {
 						 * var oView = this.getView();

@@ -47,6 +47,17 @@
 				headerText = "Actions">
 				<ActionListItem text="Accept"/>
 			</List>
+			<List
+			id="list"
+			items="{/Friends}" 
+			mode="{device>/listMode}"
+			select="handleListSelect">
+			<StandardListItem
+				type="Active"
+				press="handleListItemPress"
+				title="{FriendName}"
+			/>
+		</List>
 	
 			
 	<!-- 	<List
