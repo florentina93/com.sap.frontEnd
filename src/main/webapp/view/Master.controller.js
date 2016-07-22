@@ -12,6 +12,11 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 	onInit:function(){
 		this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 		console.log("in master "+this._oRouter);
+		var api = "&api=facebook";
+		var oModel = new sap.ui.model.json.JSONModel();
+		var pathModel = "http://localhost:8081/com.sap.crawler/getdata";
+		oModel.loadData(pathModel + "?" + api + "&friends", "", false);
+		this.getView().setModel(oModel);
 		
 		//Initialize model to save data from searchField needed to pass it as a parameter in backend link
 //		this.myModel = new sap.ui.model.json.JSONModel();
@@ -53,7 +58,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 		var context = evt.getSource().getBindingContext(),
 			entry = context.getModel().getProperty(context.getPath());
 		
-		this._oRouter.navTo("userDetail",{userId:entry.FriendId} );
+		this._oRouter.navTo("userDetail",{userId:entry.id} );
 	},
 		
 		processRequest : function (e) {

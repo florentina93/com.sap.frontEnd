@@ -32,7 +32,7 @@
 			<StandardListItem
 				type="Active"
 				press="handleListItemPress"
-				title="{FriendName}"
+				title="{name}"
 			/>
 		</List>
 	</Page>

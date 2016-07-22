@@ -46,16 +46,18 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 		var api = "&api=facebook";
 		var oModel = new sap.ui.model.json.JSONModel();
 		// oModel.loadData("json/plants.json", false);
-		oModel.loadData(pathModel + "?" + api + "&me", "", false);
+		oModel.loadData(pathModel + "?" + api + "&friends", "", false);
+		this.getView().setModel(oModel);
 		// sap.ui.getCore().setModel(oModel,"MAIN");
-		this.getView().byId("nametext").setText(oModel.getData().name);
-		this.getView().byId("hometowntext").setText(oModel.getData().hometown.name);
-		this.getView().byId("firstnametext").setText(oModel.getData().first_name);
-		this.getView().byId("idtext").setText(oModel.getData().id);
-		this.getView().byId("birthdaytext").setText(oModel.getData().birthday);
-		this.getView().byId("gendertext").setText(oModel.getData().gender);
-		this.getView().byId("emailtext").setText(oModel.getData().email);
+//		this.getView().byId("nametext").setText(oModel.getData().name);
+//		this.getView().byId("hometowntext").setText(oModel.getData().hometown.name);
+//		this.getView().byId("firstnametext").setText(oModel.getData().first_name);
+//		this.getView().byId("idtext").setText(oModel.getData().id);
+//		this.getView().byId("birthdaytext").setText(oModel.getData().birthday);
+//		this.getView().byId("gendertext").setText(oModel.getData().gender);
+//		this.getView().byId("emailtext").setText(oModel.getData().email);
 
+		
 		var id = oParameters.arguments.userId;
 		console.log(id)
 
