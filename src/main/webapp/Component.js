@@ -86,19 +86,7 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component",{
 		// Using a local model for offline development
 		//var oModel = new sap.ui.model.json.JSONModel("model/mock.json");
 		var oModel = new sap.ui.model.json.JSONModel("model/mock.json");
-		//oModel.loadData("http://localhost:8081/com.sap.crawler/getdata", "", false);
 		oView.setModel(oModel);
-		
-			//set device model
-//		var deviceModel = new sap.ui.model.json.JSONModel({
-//				isPhone : jQuery.device.is.phone,
-//				isNoPhone : !jQuery.device.is.phone,
-//				listMode : (jQuery.device.is.phone) ? "None" : "SingleSelectMaster",
-//				listItemType : (jQ.device.is.phone) ? "Active" : "Inactive"
-//	
-//		});
-//		deviceModel.setDefaultBindingMode("oneWay");
-//		oView.setModel(deviceModel, "device");
 
 		// done
 		return oView;

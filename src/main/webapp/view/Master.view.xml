@@ -4,27 +4,7 @@
 	xmlns:core="sap.ui.core" >
 	<Page
 		title="{i18n>MasterTitle}" >
-		<!--  <subHeader>
-			<Bar>
-				<contentLeft>
-					<SearchField
-							search="handleSearch"
-							width="100%">
-					</SearchField>
-				</contentLeft>
-			</Bar>
-		</subHeader> 		
-		<List
-			id="list"
-			items="{/Friends}" 
-			mode="{device>/listMode}"
-			select="handleListSelect">
-			<StandardListItem
-				type="Active"
-				press="handleListItemPress"
-				title="{FriendName}"
-			/>
-		</List> -->
+	
 		<Bar>
 				<contentLeft>
 					<SearchField
@@ -43,10 +23,7 @@
 				<RadioButton id="radiohomeTown" groupName="criteria" text="HomeTown"/> 
 				<RadioButton id="radioworkPlace" groupName="criteria" text="WorkPlace"/>
 			</VBox>
-			<List
-				headerText = "Actions">
-				<ActionListItem text="Accept"/>
-			</List>
+			
 			<List
 			id="list"
 			items="{/Friends}" 
@@ -58,71 +35,5 @@
 				title="{FriendName}"
 			/>
 		</List>
-	
-			
-	<!-- 	<List
-			id="list"
-			items="{/Friends}" 
-			mode="{device>/listMode}"
-			select="handleListSelect">
-			<StandardListItem
-				type="Active"
-				press="handleListItemPress"
-				title="{FriendName}"
-				 text="Name Here" id="nametext"/>
-		<StandardListItem
-				type="Active"
-				press="handleListItemPress"
-				title="{FriendName}"
-				 text="First Name Here" id="firstnametext"/>
-				 <StandardListItem
-				type="Active"
-				press="handleListItemPress"
-				title="{FriendName}"
-				 text="Hometown Here" id="hometowntext"/>
-				 <StandardListItem
-				type="Active"
-				press="handleListItemPress"
-				title="{FriendName}"
-				 text="Id Here" id="idtext"/>
-				 <StandardListItem
-				type="Active"
-				press="handleListItemPress"
-				title="{FriendName}"
-				 text="Birthday Here" id="birthdaytext"/>
-				 <StandardListItem
-				type="Active"
-				press="handleListItemPress"
-				title="{FriendName}"
-				 text="Gender Here" id="gendertext"/>
-				 <StandardListItem
-				type="Active"
-				press="handleListItemPress"
-				title="{FriendName}"
-				 text="Sport Here" id="sporttext"/>
-				 <StandardListItem
-				type="Active"
-				press="handleListItemPress"
-				title="{FriendName}"
-				 text="Work Here" id="worktext"/>
-				 <StandardListItem
-				type="Active"
-				press="handleListItemPress"
-				title="{FriendName}"
-				 text="Email Here" id="emailtext"/>
-		</List>
-		</VBox>-->
-	<!-- <VBox>
-		<Label text="Name Here" id="nametext"/>
-		<Label text="Firstname Here" id="firstnametext"/>
-		<Label text="hometownHere" id="hometowntext"/>
-		<Label text="Id Here" id="idtext"/>
-		<Label text="Birthday Here" id="birthdaytext"/>
-		<Label text="Gender Here" id="gendertext"/>
-		<Label text="Sports Here" id="sportstext"/>
-		<Label text="Work Here" id="worktext"/>
-		<Label text="Email Here" id="emailtext"/>
-	</VBox>	-->
-		
 	</Page>
 </core:View>
