@@ -37,7 +37,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 		var oParameters = oEvent.getParameters();
 		var pathModel = "http://localhost:8081/com.sap.crawler/getdata";
 
-		if (oParameters.name !== "userDetailx") {
+		if (oParameters.name !== "userDetail") {
 			return;
 		}
 
