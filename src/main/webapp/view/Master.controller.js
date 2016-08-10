@@ -14,8 +14,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 		console.log("in master "+this._oRouter);
 		var api = "&api=facebook";
 		var oModel = new sap.ui.model.json.JSONModel();
-		var pathModel = "http://localhost:8081/com.sap.crawler/getdata";
-		oModel.loadData(pathModel + "?" + api + "&friends", "", false);
+//		var pathModel = "http://localhost:8081/com.sap.crawler/getdata";
+//		oModel.loadData(pathModel + "?" + api + "&friends", "", false);
+		var pathModel = "http://localhost:8081/com.sap.crawler/testdata";
+		oModel.loadData(pathModel);
 		this.getView().setModel(oModel);
 		
 		//Initialize model to save data from searchField needed to pass it as a parameter in backend link
