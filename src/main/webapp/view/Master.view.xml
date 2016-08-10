@@ -26,7 +26,7 @@
 			
 			<List
 			id="list"
-			items="{/PostsName}" 
+			items="{/Friends}" 
 			mode="{device>/listMode}"
 			select="handleListSelect">
 			<StandardListItem
