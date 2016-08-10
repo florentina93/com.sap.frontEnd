@@ -8,49 +8,29 @@
 		showNavButton="{device>/isPhone}"
 		navButtonPress="handleNavButtonPress" >
 		<VBox>
-			<Text text="{FriendName}" />
-			<Text text="{FriendAddress}" />
-			<Text text="{FriendAge}" />
-			<Text text="{FriendWorkPlace}" />
-		</VBox>
-		
-		<VBox>
 		<HBox>
 		<Label text="Name:"/>
 		<Label text="" id="nametext"/>
 		</HBox>
+		
+		
 		<HBox>
-		<Label text="First Name:"/>
-		<Label text="" id="firstnametext"/>
-		</HBox>
-		<HBox>
-		<Label text="Hometown:"/>
-		<Label text="" id="hometowntext"/>
-		</HBox>
-		<HBox>
-		<Label text="Id:"/>
+		<Label text="Link to post:"/>
 		<Label text="" id="idtext"/>
 		</HBox>
+		
 		<HBox>
-		<Label text="Birthday:"/>
-		<Label text="" id="birthdaytext"/>
+		<Label text="Message:"/>
+		<Label text="" id="messagetext"/>
 		</HBox>
+		
 		<HBox>
-		<Label text="Gender:"/>
-		<Label text="" id="gendertext"/>
+		<Label text="Description:"/>
+		<Label text="" id="descriptiontext"/>
 		</HBox>
-		<HBox>
-		<Label text="Sports:"/>
-		<Label text="" id="sportstext"/>
-		</HBox>
-		<HBox>
-		<Label text="Work:"/>
-		<Label text="" id="worktext"/>
-		</HBox>
-		<HBox>
-		<Label text="Email:"/>
-		<Label text="" id="emailtext"/>
-		</HBox>
+		
+		
+		
 		</VBox>
 	</Page>
 </core:View>
