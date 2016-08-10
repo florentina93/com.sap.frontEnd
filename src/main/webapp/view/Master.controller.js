@@ -14,7 +14,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 		console.log("in master "+this._oRouter);
 		var api = "&api=facebook";
 		var oModel = new sap.ui.model.json.JSONModel();
-		var pathModel = "http://localhost:8081/com.sap.crawler/getdata";
+		var pathModel = "http://localhost:8080/com.sap.crawler/getdata";
 		oModel.loadData(pathModel + "?" + api + "&friends", "", false);
 		this.getView().setModel(oModel);
 		

@@ -16,12 +16,12 @@
 				</contentLeft>
 			</Bar>
 			<VBox>
-			<Text text="Select the criteria for search"/>
-				<HBox>
-				<RadioButton id="radioall" groupName="criteria" text="All"/>
-				<RadioButton id="radioname" groupName="criteria" text="Name"/>
-				<RadioButton id="radiohomeTown" groupName="criteria" text="HomeTown"/> 
-				</HBox>
+			<Text text="Select where to search in posts"/>
+		<!-- 	<HBox> -->
+				<RadioButton id="radioall" groupName="criteria" text="Everything"/>
+				<RadioButton id="radiodescription" groupName="criteria" text="Description"/>
+				<RadioButton id="radiocomments" groupName="criteria" text="Comments"/> 
+		<!-- 	</HBox> -->
 			</VBox>
 			
 			<List
