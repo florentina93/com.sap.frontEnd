@@ -16,7 +16,7 @@
 				</contentLeft>
 			</Bar>
 			<VBox>
-			<Text text="Select the criteria for search"/>
+			<Text text="Select where to search in posts"/>
 				<!-- <HBox> -->
 				<RadioButton id="radioEverything" groupName="criteria" text="Everything"/>
 				<RadioButton id="radioDescription" groupName="criteria" text="Description"/>
