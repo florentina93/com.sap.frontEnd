@@ -46,6 +46,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 
 		var oParameters = oEvent.getParameters();
 		var id = oParameters.arguments.postId;
+		var pathModel = "http://localhost:8080/com.sap.crawler/getdata?&api=facebook&postsDetails&postId="+id;
 
 		if (oParameters.name !== "postDetail") {
 			return;
@@ -67,6 +68,9 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 		//arrayIndex = this.findCorrespondingIndex(dataArray, id);
 		//console.log(arrayIndex);
 		
+		this.getView().byId("nametext").setText(oModel.getData().Post[0].name);
+		this.getView().byId("descriptiontext").setText(oModel.getData().Post[0].description);
+		this.getView().byId("messagetext").setText(oModel.getData().Post[0].message);
 		this.getView().byId("idtext").setText(id);
 //		this.getView().byId("birthdaytext").setText(oModel.getData().birthday);
 //		this.getView().byId("gendertext").setText(oModel.getData().gender);
