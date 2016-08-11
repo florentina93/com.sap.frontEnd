@@ -21,7 +21,7 @@
 		
 		<HBox>
 		<Label text="Message:"/>
-		<Label text="" id="messagetext"/>
+		<Label text="" id="messagetext" wrapping="false"/>
 		</HBox>
 		
 		<HBox>

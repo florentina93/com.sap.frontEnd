@@ -25,14 +25,14 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component",{
 			        	targetControl:"splitApp",
 			        },
 			        {
-			        	pattern:"userDetail/{userId}",
-			        	name:"userDetail",
+			        	pattern:"postDetail/{postId}",
+			        	name:"postDetail",
 			        	view:"Detail",
 			        	targetAggregation:"detailPages",
 			        },
 			        {
-			        	pattern:"userDetailx",
-			        	name:"userDetailx",
+			        	pattern:"postDetailx",
+			        	name:"postDetailx",
 			        	view:"Detail",
 			        	targetAggregation:"detailPages",
 			        },

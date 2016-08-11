@@ -26,6 +26,16 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 
 		this.getRouter().attachRoutePatternMatched(this.onRouteMatched, this);
 	},
+	
+//	findCorrespondingIndex : function(dataArray, idFromLink){
+//		length=dataArray.length;
+//		var i=0;
+//		for(i=0;i<length;i++){
+//			if(dataArray[i].id == idFromLink)
+//				return i;
+//		}
+//		return 0;
+//	},
 
 	onRouteMatched : function(oEvent) {
 
@@ -35,25 +45,28 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 		//console.log(val.getJSON().searchValue);
 
 		var oParameters = oEvent.getParameters();
-		var pathModel = "http://localhost:8080/com.sap.crawler/getdata?&api=facebook&postsDetails";
+		var id = oParameters.arguments.postId;
 
-		if (oParameters.name !== "userDetail") {
+		if (oParameters.name !== "postDetail") {
 			return;
 		}
 
 		console.log(pathModel);
 		console.log(this.getView().byId("servlet"));
 		var api = "&api=facebook";
-		var id = oParameters.arguments.userId;
+		
 		
 		var oModel = new sap.ui.model.json.JSONModel();
 		// oModel.loadData("json/plants.json", false);
 		oModel.loadData(pathModel, "", false);
 		//this.getView().setModel(oModel);
 		// sap.ui.getCore().setModel(oModel,"MAIN");
-		this.getView().byId("nametext").setText(oModel.getData().PostDetails[id].name);
-		this.getView().byId("descriptiontext").setText(oModel.getData().PostDetails[id].description);
-		this.getView().byId("messagetext").setText(oModel.getData().PostDetails[id].message);
+		
+		//var dataArray = oModel.getData().PostDetails;
+		
+		//arrayIndex = this.findCorrespondingIndex(dataArray, id);
+		//console.log(arrayIndex);
+		
 		this.getView().byId("idtext").setText(id);
 //		this.getView().byId("birthdaytext").setText(oModel.getData().birthday);
 //		this.getView().byId("gendertext").setText(oModel.getData().gender);
