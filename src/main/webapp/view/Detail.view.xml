@@ -16,7 +16,7 @@
 		
 		<HBox>
 		<Label text="Link to post:"/>
-		<Label text="" id="idtext"/>
+		<Link text="" id="idtext"/>
 		</HBox>
 		
 		<HBox>

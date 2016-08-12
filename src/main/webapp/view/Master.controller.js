@@ -17,7 +17,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 //		var pathModel = "http://localhost:8081/com.sap.crawler/getdata";
 //		oModel.loadData(pathModel + "?" + api + "&friends", "", false);
 		
-		var pathModel = "http://localhost:8080/com.sap.crawler/getdata?&api=facebook&posts";
+		var pathModel = "http://localhost:8080/com.sap.crawler/getdata?&api=facebook&request=posts";
 		oModel.loadData(pathModel);
 		this.getView().setModel(oModel);
 	    if (sap.ui.Device.system.phone) {
