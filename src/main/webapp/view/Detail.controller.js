@@ -67,12 +67,27 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 		//arrayIndex = this.findCorrespondingIndex(dataArray, id);
 		//console.log(arrayIndex);
 		
-		this.getView().byId("nametext").setText(oModel.getData().Post[0].name);
-		this.getView().byId("descriptiontext").setText(oModel.getData().Post[0].description);
-		this.getView().byId("messagetext").setText(oModel.getData().Post[0].message);
-		this.getView().byId("idtext").setHref("http://"+oModel.getData().Post[0].linkId);
-		this.getView().byId("idtext").setText(oModel.getData().Post[0].linkId);
+		if(oModel.getData().Post[0].name!="")
+			this.getView().byId("nametext").setText("Name: "+oModel.getData().Post[0].name);
+		else
+			this.getView().byId("nametext").setText("");
 		
+		if(oModel.getData().Post[0].description!="")
+			this.getView().byId("descriptiontext").setText("Description: "+oModel.getData().Post[0].description);
+		else
+			this.getView().byId("descriptiontext").setText("");
+		
+		if(oModel.getData().Post[0].message!="")
+			this.getView().byId("messagetext").setText("Message: "+oModel.getData().Post[0].message);
+		else
+			this.getView().byId("messagetext").setText("");
+		
+		if(oModel.getData().Post[0].linkId!=""){
+			this.getView().byId("idtext").setHref("http://"+oModel.getData().Post[0].linkId);
+			this.getView().byId("idtext").setText("Link to post: "+oModel.getData().Post[0].linkId);
+		}
+		else
+			this.getView().byId("idtext").setText("");
 		console.log(id)
 
 		/*

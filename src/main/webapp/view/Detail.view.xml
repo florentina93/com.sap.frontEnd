@@ -9,23 +9,19 @@
 		navButtonPress="handleNavButtonPress" >
 		<VBox>
 		<HBox>
-		<Label text="Name:"/>
 		<Label text="" id="nametext"/>
 		</HBox>
 		
 		
 		<HBox>
-		<Label text="Link to post:"/>
 		<Link text="" id="idtext"/>
 		</HBox>
 		
 		<HBox>
-		<Label text="Message:"/>
 		<Label text="" id="messagetext" wrapping="false"/>
 		</HBox>
 		
 		<HBox>
-		<Label text="Description:"/>
 		<Label text="" id="descriptiontext"/>
 		</HBox>
 		
