@@ -14,9 +14,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 		console.log("in master "+this._oRouter);
 		var api = "&api=facebook";
 		var oModel = new sap.ui.model.json.JSONModel();
-//		var pathModel = "http://localhost:8081/com.sap.crawler/getdata";
-//		oModel.loadData(pathModel + "?" + api + "&friends", "", false);
-		
 		var pathModel = "http://localhost:8080/com.sap.crawler/getdata?&api=facebook&request=posts";
 		oModel.loadData(pathModel);
 		this.getView().setModel(oModel);
@@ -70,18 +67,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 			
 			var context = evt.getSource().getBindingContext();
 			this._oRouter.navTo("postDetailx", context);
-			
-			console.log('evt.getSource: ' + evt.getSource());
-		    console.log('evt.getBindingContext: ' + evt.getSource().getBindingContext());
 		    
 		    console.log(this.getView().byId("servlet").getValue());
-		    
-		    //Create json that contains value from searchField and save JSON in model created in init
-//		    var json = {};
-//		    json.searchValue = this.getView().byId("servlet").getValue();
-//		    this.myModel.setData(json);
-//		    console.log("Am setat jsonu");
-//		    sap.ui.getCore().setModel(this.myModel, "searchModel");
-			//console.log(oModel.getData().name);
 		}
 });

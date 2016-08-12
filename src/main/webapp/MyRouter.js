@@ -33,24 +33,4 @@ sap.ui.core.routing.Router.extend("sap.ui.demo.myFiori.MyRouter", {
 		oSplitApp.to(oView.getId(), "show",data);
 	}
 
-//	backWithoutHash : function (oCurrentView, bIsMaster) {
-//		var sBackMethod = bIsMaster ? "backMaster" : "backDetail";
-//		this._findSplitApp(oCurrentView)[sBackMethod]();
-//	},
-//	
-//	destroy : function() {
-//		sap.ui.core.routing.Router.prototype.destroy.apply(this, arguments);
-//		this._oRouteMatchedHandler.destroy();
-//	},
-//
-//	_findSplitApp : function(oControl) {
-//		sAncestorControlName = "idAppControl";
-//
-//		if (oControl instanceof sap.ui.core.mvc.View && oControl.byId(sAncestorControlName)) {
-//			return oControl.byId(sAncestorControlName);
-//		}
-//
-//		return oControl.getParent() ? this._findSplitApp(oControl.getParent(), sAncestorControlName) : null;
-//	}
-
 });

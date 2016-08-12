@@ -8,25 +8,10 @@
 		showNavButton="{device>/isPhone}"
 		navButtonPress="handleNavButtonPress" >
 		<VBox>
-		<HBox>
 		<Label text="" id="nametext"/>
-		</HBox>
-		
-		
-		<HBox>
 		<Link text="" id="idtext"/>
-		</HBox>
-		
-		<HBox>
 		<Label text="" id="messagetext" wrapping="false"/>
-		</HBox>
-		
-		<HBox>
 		<Label text="" id="descriptiontext"/>
-		</HBox>
-		
-		
-		
 		</VBox>
 	</Page>
 </core:View>
