@@ -20,12 +20,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 		var pathModel = "http://localhost:8080/com.sap.crawler/getdata?&api=facebook&posts";
 		oModel.loadData(pathModel);
 		this.getView().setModel(oModel);
-		
-		//Initialize model to save data from searchField needed to pass it as a parameter in backend link
-//		this.myModel = new sap.ui.model.json.JSONModel();
-//		this.myModel.setProperty("name","andi");
-//		console.log(this.myModel.getProperty("/name"));
-//		//console.log("--------------------------....----");
 	    if (sap.ui.Device.system.phone) {
 			return;
 	}

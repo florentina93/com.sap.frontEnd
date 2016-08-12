@@ -71,12 +71,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 		this.getView().byId("nametext").setText(oModel.getData().Post[0].name);
 		this.getView().byId("descriptiontext").setText(oModel.getData().Post[0].description);
 		this.getView().byId("messagetext").setText(oModel.getData().Post[0].message);
-		this.getView().byId("idtext").setText(id);
-//		this.getView().byId("birthdaytext").setText(oModel.getData().birthday);
-//		this.getView().byId("gendertext").setText(oModel.getData().gender);
-//		this.getView().byId("emailtext").setText(oModel.getData().email);
-
-		
+		this.getView().byId("idtext").setText(oModel.getData().Post[0].linkId);
 		
 		console.log(id)
 
