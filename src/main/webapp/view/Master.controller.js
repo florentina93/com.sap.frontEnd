@@ -10,13 +10,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 		},
 	
 	onInit:function(){
+		
 		this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 		console.log("in master "+this._oRouter);
-		var api = "&api=facebook";
-		var oModel = new sap.ui.model.json.JSONModel();
-		var pathModel = "http://localhost:8080/com.sap.crawler/getdata?&api=facebook&request=posts";
-		oModel.loadData(pathModel);
-		this.getView().setModel(oModel);
+		
 	    if (sap.ui.Device.system.phone) {
 			return;
 	}
@@ -62,12 +59,24 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 		},
 	
 		handleSearch1 : function(evt){
-
-			var button = this.getView().byId("radioname").getSelected();
+			this.getView().byId("list").setBusy(true);
+			//var button = this.getView().byId("radioname").getSelected();
 			
-			var context = evt.getSource().getBindingContext();
-			this._oRouter.navTo("postDetailx", context);
+			//var context = evt.getSource().getBindingContext();
+			//this._oRouter.navTo("postDetailx", context);
 		    
-		    console.log(this.getView().byId("servlet").getValue());
+		    //console.log(this.getView().byId("servlet").getValue());
+		    
+		    var api = "&api=facebook";
+			var oModel = new sap.ui.model.json.JSONModel();
+			var pathModel = "http://localhost:8080/com.sap.crawler/getdata?&api=facebook&request=posts";
+			var this1=this;
+			oModel.attachRequestCompleted(function() {
+				this1.getView().byId("list").setBusy(false);
+				console.log(oModel.getData());
+		    });
+			oModel.loadData(pathModel);
+			
+			this.getView().setModel(oModel);
 		}
 });

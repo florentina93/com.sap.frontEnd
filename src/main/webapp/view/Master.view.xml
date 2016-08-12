@@ -24,11 +24,31 @@
 				<!-- </HBox> -->
 			</VBox>
 			
+			<!-- <FlexBox
+			alignItems="End"
+			>
+				<BusyIndicator 
+					id="busyIndicator"
+					class="sapUiSmallMarginBottom"
+					visible="false"
+					/>
+				<HBox
+					justifyContent="Start"
+					alignItems="Center" >
+					<BusyIndicator size="1.4em" />
+					<BusyIndicator size="3em" />
+					<BusyIndicator size="4.6em" />
+					<BusyIndicator size="3em" />
+					<BusyIndicator size="1.4em" />
+				</HBox>
+			</FlexBox> -->
 			<List
 			id="list"
 			items="{/PostNames}" 
 			mode="{device>/listMode}"
-			select="handleListSelect">
+			select="handleListSelect"
+			showNoData="false"
+			>
 			<StandardListItem
 				type="Active"
 				press="handleListItemPress"

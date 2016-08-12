@@ -19,17 +19,26 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 	},
 	
 	onRouteMatched : function(oEvent) {
+		
 		var oParameters = oEvent.getParameters();
 		var id = oParameters.arguments.postId;
 		var pathModel = "http://localhost:8080/com.sap.crawler/getdata?&api=facebook&request=postsDetails&postId="+id;
-
 		if (oParameters.name !== "postDetail") {
 			return;
 		}
-
+	
+		this.getView().setBusy(true);
 		console.log(pathModel);
 		var oModel = new sap.ui.model.json.JSONModel();
-		oModel.loadData(pathModel, "", false);
+		
+		var this1=this;
+		oModel.attachRequestCompleted(function() {
+			this1.getView().setBusy(false);
+			console.log(oModel.getData());
+	    });
+		
+		oModel.loadData(pathModel,"",false);
+		
 		
 		if(oModel.getData().Post[0].name!="")
 			this.getView().byId("nametext").setText("Name: "+oModel.getData().Post[0].name);
