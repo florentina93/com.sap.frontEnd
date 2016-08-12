@@ -48,7 +48,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 		
 		if(oModel.getData().Post[0].linkId!=""){
 			this.getView().byId("idtext").setHref("http://"+oModel.getData().Post[0].linkId);
-			this.getView().byId("idtext").setText("Link to post: "+oModel.getData().Post[0].linkId);
+			this.getView().byId("idtext").setText("Link to post");
 		}
 		else
 			this.getView().byId("idtext").setText("");
