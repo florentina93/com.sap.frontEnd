@@ -17,6 +17,31 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
 		this.getRouter().attachRoutePatternMatched(this.onRouteMatched, this);
 	},
+
+	printDetails : function(data){
+		if(data.name!="")
+			this.getView().byId("nametext").setText("Name: "+data.name);
+		else
+			this.getView().byId("nametext").setText("");
+		
+		if(data.description!="")
+			this.getView().byId("descriptiontext").setText("Description: "+data.description);
+		else
+			this.getView().byId("descriptiontext").setText("");
+		
+		if(data.message!="")
+			this.getView().byId("messagetext").setText("Message: "+data.message);
+		else
+			this.getView().byId("messagetext").setText("");
+		
+		if(data.linkId!=""){
+			this.getView().byId("idtext").setHref("http://"+data.linkId);
+			this.getView().byId("idtext").setText("Link to post");
+		}
+		else
+			this.getView().byId("idtext").setText("");
+		//sap.ui.core.BusyIndicator.hide();
+	},
 	
 	onRouteMatched : function(oEvent) {
 		
@@ -27,42 +52,17 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 			return;
 		}
 	
-		this.getView().setBusy(true);
+		//sap.ui.core.BusyIndicator.show(0);
+		//this.getView().setBusy(true);
 		console.log(pathModel);
 		var oModel = new sap.ui.model.json.JSONModel();
-		
-		var this1=this;
-		oModel.attachRequestCompleted(function() {
-			this1.getView().setBusy(false);
-			console.log(oModel.getData());
-	    });
-		
+		//oModel.attachRequestCompleted(this.printDetails(oModel.getData()));
 		oModel.loadData(pathModel,"",false);
+		this.printDetails(JSON.parse(oModel.getData().Post[0]));
+		//this.getView().setBusy(false);
 		
-		
-		if(oModel.getData().Post[0].name!="")
-			this.getView().byId("nametext").setText("Name: "+oModel.getData().Post[0].name);
-		else
-			this.getView().byId("nametext").setText("");
-		
-		if(oModel.getData().Post[0].description!="")
-			this.getView().byId("descriptiontext").setText("Description: "+oModel.getData().Post[0].description);
-		else
-			this.getView().byId("descriptiontext").setText("");
-		
-		if(oModel.getData().Post[0].message!="")
-			this.getView().byId("messagetext").setText("Message: "+oModel.getData().Post[0].message);
-		else
-			this.getView().byId("messagetext").setText("");
-		
-		if(oModel.getData().Post[0].linkId!=""){
-			this.getView().byId("idtext").setHref("http://"+oModel.getData().Post[0].linkId);
-			this.getView().byId("idtext").setText("Link to post");
-		}
-		else
-			this.getView().byId("idtext").setText("");
 		console.log(id)
-	},
+	}
 	
 //	bindView : function(sProductPath) {
 //		var oView = this.getView();
@@ -87,4 +87,5 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 //		}
 //
 //	},
+
 });
