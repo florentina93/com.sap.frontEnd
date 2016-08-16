@@ -58,25 +58,49 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 		    }
 		},
 	
-		handleSearch1 : function(evt){
+		handleSearch : function(evt){
 			this.getView().byId("list").setBusy(true);
-			//var button = this.getView().byId("radioname").getSelected();
-			
 			//var context = evt.getSource().getBindingContext();
 			//this._oRouter.navTo("postDetailx", context);
 		    
 		    //console.log(this.getView().byId("servlet").getValue());
 		    
-		    var api = "&api=facebook";
+		    //var api = "&api=facebook";
+			
 			var oModel = new sap.ui.model.json.JSONModel();
-			var pathModel = "http://localhost:8080/com.sap.crawler/getdata?&api=facebook&request=posts";
+			var pathModel = "http://localhost:8080/com.sap.crawler/webapi/posts";
 			var this1=this;
 			oModel.attachRequestCompleted(function() {
 				this1.getView().byId("list").setBusy(false);
 				console.log(oModel.getData());
 		    });
-			oModel.loadData(pathModel);
-			
+			oModel.loadData(pathModel);		
 			this.getView().setModel(oModel);
+			
+			var aFilters = [];
+			var query = evt.getParameter("query");
+			console.log(query);
+			
+			var descriptionButton = this.getView().byId("radioDescription").getSelected();
+			console.log(descriptionButton);
+
+			if(query && query.length > 0) {
+				if(descriptionButton == true) {
+					var filter = new sap.ui.model.Filter("description", sap.ui.model.FilterOperator.Contains, query);
+					console.log("Description selected, search by description!");
+				} else {
+					var filter = new sap.ui.model.Filter("name", sap.ui.model.FilterOperator.Contains, query);
+					console.log("Nothing selected, search by name!");
+				}
+				aFilters.push(filter);
+			}
+			
+			var list = this.getView().byId("list");
+			var binding = list.getBinding("items");
+			binding.filter(aFilters);
+		},
+		
+		onSearch : function (evt) {
+					
 		}
 });

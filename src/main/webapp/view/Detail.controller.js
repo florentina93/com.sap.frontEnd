@@ -47,7 +47,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 		
 		var oParameters = oEvent.getParameters();
 		var id = oParameters.arguments.postId;
-		var pathModel = "http://localhost:8080/com.sap.crawler/getdata?&api=facebook&request=postsDetails&postId="+id;
+		var pathModel = "http://localhost:8080/com.sap.crawler/webapi/posts/"+id;
+		//var pathModel = "http://localhost:8080/com.sap.crawler/getdata?&api=facebook&request=postsDetails&postId="+id;
 		if (oParameters.name !== "postDetail") {
 			return;
 		}

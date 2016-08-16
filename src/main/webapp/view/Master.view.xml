@@ -3,13 +3,13 @@
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core" >
 	<Page
-		title="{i18n>MasterTitle}" >
+		title="{i18n>MasterTitle}">
 	
 		<Bar>
 				<contentLeft>
 					<SearchField
 							id="servlet"
-							search="handleSearch1"
+							search="handleSearch"
 							width="100%"
 							>
 					</SearchField>
@@ -44,7 +44,7 @@
 			</FlexBox> -->
 			<List
 			id="list"
-			items="{/PostNames}" 
+			items="{/PostDetails}" 
 			mode="{device>/listMode}"
 			select="handleListSelect"
 			showNoData="false"
