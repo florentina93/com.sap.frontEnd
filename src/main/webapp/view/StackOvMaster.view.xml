@@ -1,0 +1,42 @@
+<core:View
+	controllerName="sap.ui.demo.myFiori.view.StackOvMaster"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<Page
+		title="{i18n>MasterTitle}">
+	
+		<Bar>
+				<contentLeft>
+					<SearchField
+							id="servlet"
+							search="handleSearch"
+							width="100%"
+							>
+					</SearchField>
+				</contentLeft>
+			</Bar>
+			<VBox>
+			<Text text="Select where to search in questions"/>
+				<!-- <HBox> -->
+				<RadioButton id="radioTitle" groupName="criteria" text="Title"/> 
+				<!-- <RadioButton id="radioEverything" groupName="criteria" text="Everything"/> -->
+				<RadioButton id="radioTag" groupName="criteria" text="Tag"/>
+				<RadioButton id="radioCreationDate" groupName="criteria" text="Creation Date"/>
+				<!-- </HBox> -->
+			</VBox>
+		
+			<List
+			id="list"
+			items="{/QuestionsDetails}" 
+			mode="{device>/listMode}"
+			select="handleListSelect"
+			showNoData="false"
+			>
+			<StandardListItem
+				type="Active"
+				press="handleListItemPress"
+				title="{title}"
+			/>
+		</List>
+	</Page>
+</core:View>

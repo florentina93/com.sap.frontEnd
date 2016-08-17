@@ -13,12 +13,12 @@ sap.ui.jsview("sap.ui.demo.myFiori.view.App", {
 		this.app = new sap.m.SplitApp("splitApp",{});
 		
 		// load the master page
-		var master = sap.ui.xmlview("Master", "sap.ui.demo.myFiori.view.Master");
+		var master = sap.ui.xmlview("Master", "sap.ui.demo.myFiori.view.StackOvMaster");
 		master.getController().nav = this.getController();
 		this.app.addPage(master, true);
 		
 		// load the detail page
-		var detail = sap.ui.xmlview("Detail", "sap.ui.demo.myFiori.view.Detail");
+		var detail = sap.ui.xmlview("Detail", "sap.ui.demo.myFiori.view.StackOvDetail");
 		detail.getController().nav = this.getController();
 		this.app.addPage(detail, false);
 		
