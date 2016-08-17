@@ -9,6 +9,7 @@
 		navButtonPress="handleNavButtonPress" >
 		<VBox>
 		<Label text="" id="titletext"/>
+		<Label text="" id="ownerNametext"/>
 		<Label text="" id="tagtext"/>
 		<Label text="" id="creationDatetext"/>
 		</VBox>

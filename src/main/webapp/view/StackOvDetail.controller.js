@@ -19,40 +19,36 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvDetail", {
 	},
 
 	printDetails : function(data){
-		if(data.title!="")
-			this.getView().byId("titletext").setText("Title: "+data.title);
-		else
+		if(data.title != "") {
+			this.getView().byId("titletext").setText("Title: " + data.title);
+		} else {
 			this.getView().byId("titletext").setText("");
+		}
 		
-		if(data.creationDate!="")
-			this.getView().byId("creationDatetext").setText("Creation Date: "+data.creationDate);
-		else
+		if(data.creationDate != "") {
+			this.getView().byId("creationDatetext").setText("Creation Date: " + data.creationDate);
+		} else {
 			this.getView().byId("creationDatetext").setText("");
+		}
 		
-		if(data.tags!=""){
-//			var tags;
-//			var i=0;
-//			while(i<data.tags.length){
-//				tags=tags+data.tags[i]+" ";
-//				i++;
-//			}
-			this.getView().byId("tagtext").setText("Tags: "+data.tags);
-		}else
+		if(data.tags != ""){
+			this.getView().byId("tagtext").setText("Tags: " + data.tags);
+		}else {	
 			this.getView().byId("tagtext").setText("");
+		}
 		
-//		if(data.linkId!=""){
-//			this.getView().byId("idtext").setHref("http://"+data.linkId);
-//			this.getView().byId("idtext").setText("Link to post");
-//		}
-//		else
-//			this.getView().byId("idtext").setText("");
+		if(data.ownerName != "") {
+			this.getView().byId("ownerNametext").setText("Owner Name: " + data.ownerName);
+		} else {
+			this.getView().byId("ownerNametext").setText("");
+		}
 	},
 	
 	onRouteMatched : function(oEvent) {
 		
 		var oParameters = oEvent.getParameters();
 		var id = oParameters.arguments.qId;
-		/**/
+
 		var pathModel = "http://localhost:8080/com.sap.crawler/webapi/stackov/questions/"+id;
 		if (oParameters.name !== "qDetail") {
 			return;
