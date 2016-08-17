@@ -60,15 +60,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 	
 		handleSearch : function(evt){
 			this.getView().byId("list").setBusy(true);
-			//var context = evt.getSource().getBindingContext();
-			//this._oRouter.navTo("postDetailx", context);
-		    
-		    //console.log(this.getView().byId("servlet").getValue());
-		    
-		    //var api = "&api=facebook";
-			
 			var oModel = new sap.ui.model.json.JSONModel();
-			var pathModel = "http://localhost:8080/com.sap.crawler/webapi/posts";
+			var pathModel = "http://localhost:8080/com.sap.crawler/webapi/facebook/posts/allDetails";
 			var this1=this;
 			oModel.attachRequestCompleted(function() {
 				this1.getView().byId("list").setBusy(false);
@@ -82,17 +75,34 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 			console.log(query);
 			
 			var descriptionButton = this.getView().byId("radioDescription").getSelected();
+			var nameButton = this.getView().byId("radioName").getSelected();
+			var messageButton = this.getView().byId("radioMessage").getSelected();
+			var linkButton = this.getView().byId("radioLink").getSelected();
 			console.log(descriptionButton);
-
+			
+			var filterName;
+			var filterDesc;
+			var filterLink;
+			var filterMessage;
+			
 			if(query && query.length > 0) {
 				if(descriptionButton == true) {
-					var filter = new sap.ui.model.Filter("description", sap.ui.model.FilterOperator.Contains, query);
+					filterDesc = new sap.ui.model.Filter("description", sap.ui.model.FilterOperator.Contains, query);
 					console.log("Description selected, search by description!");
-				} else {
-					var filter = new sap.ui.model.Filter("name", sap.ui.model.FilterOperator.Contains, query);
-					console.log("Nothing selected, search by name!");
+					aFilters.push(filterDesc);
+				} 
+				if(nameButton == true) {
+					filterName = new sap.ui.model.Filter("name", sap.ui.model.FilterOperator.Contains, query);
+					aFilters.push(filterName);
 				}
-				aFilters.push(filter);
+				if (messageButton == true) {
+					filterMessage = new sap.ui.model.Filter("message", sap.ui.model.FilterOperator.Contains, query);
+					aFilters.push(filterMessage);
+				}
+				if (linkButton == true) {
+					filterLink = new sap.ui.model.Filter("linkId", sap.ui.model.FilterOperator.Contains, query);
+					aFilters.push(filterLink);
+				}
 			}
 			
 			var list = this.getView().byId("list");

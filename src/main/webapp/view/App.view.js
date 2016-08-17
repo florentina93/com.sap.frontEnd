@@ -30,7 +30,3 @@ sap.ui.jsview("sap.ui.demo.myFiori.view.App", {
 		return this.app;
 	}
 });
-
-//routing
-//controller events
-//diff ui5 - dom
