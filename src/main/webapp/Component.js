@@ -20,8 +20,8 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component",{
 			        {
 			        	pattern:"",
 			        	name:"main",
-			        	view:"StackOvMaster",
-			        	targetAggregation:"masterPages",
+			        	view:"Initial",
+			        	targetAggregation:"",
 			        },
 			        {
 			        	pattern:"FacebookMaster",

@@ -1,0 +1,29 @@
+<core:View
+	controllerName="sap.ui.demo.myFiori.view.Initial"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<Page
+		id="Initial"
+		title="{i18n>InitialTitle}"
+		>
+		<VBox>
+		<Label text="Choose the desired API" id=""/>
+		<HBox>
+		<Button text="Facebook"
+						press="onPressFacebook"
+						ariaDescribedBy="defaultButtonDescription genericButtonDescription">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+		</Button>
+		<Button text="Stack Overflow"
+						press="onPressStackOv"
+						ariaDescribedBy="defaultButtonDescription genericButtonDescription">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+		</Button>
+		</HBox>
+		</VBox>
+	</Page>
+</core:View>

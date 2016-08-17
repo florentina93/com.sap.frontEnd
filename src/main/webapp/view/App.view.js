@@ -13,7 +13,7 @@ sap.ui.jsview("sap.ui.demo.myFiori.view.App", {
 		this.app = new sap.m.SplitApp("splitApp",{});
 		
 		// load the master page
-		var master = sap.ui.xmlview("Master", "sap.ui.demo.myFiori.view.StackOvMaster");
+		var master = sap.ui.xmlview("Master", "sap.ui.demo.myFiori.view.Initial");
 		master.getController().nav = this.getController();
 		this.app.addPage(master, true);
 		
