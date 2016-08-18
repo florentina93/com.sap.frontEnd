@@ -19,8 +19,8 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component",{
 			        },
 			        {
 			        	pattern:"InitialView",
-			        	name:"Initial",
-			        	view:"Initial",
+			        	name:"InitialMaster",
+			        	view:"InitialMaster",
 			        	targetAggregation:"masterPages",
 			        },
 			        {
@@ -42,6 +42,12 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component",{
 			        	targetAggregation:"detailPages",
 			        },
 
+			        {
+			        	pattern:"InitialDetail",
+			        	name:"InitialDetail",
+			        	view:"InitialDetail",
+			        	targetAggregation:"detailPages",
+			        },
 			        ]
 		}
 	},

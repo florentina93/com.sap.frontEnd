@@ -1,4 +1,4 @@
-sap.ui.controller("sap.ui.demo.myFiori.view.Initial", {
+sap.ui.controller("sap.ui.demo.myFiori.view.InitialMaster", {
 
 		getEventBus : function () {
 			var sComponentId = sap.ui.core.Component.getOwnerIdFor(this.getView());
@@ -17,6 +17,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Initial", {
 		    if (sap.ui.Device.system.phone) {
 				return;
 		    }
+		    
 		},
 	
 		onPressFacebook:function(evt){

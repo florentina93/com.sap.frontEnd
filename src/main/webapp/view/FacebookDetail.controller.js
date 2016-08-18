@@ -11,6 +11,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookDetail", {
 
 	handleNavButtonPress : function(evt) {
 		this._oRouter.navTo("Master");
+
 	},
 
 	onInit : function() {

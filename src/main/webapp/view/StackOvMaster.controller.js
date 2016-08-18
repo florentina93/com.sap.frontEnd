@@ -20,7 +20,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 		},
 		
 		handleNavButtonPress : function(evt) { 
-			this._oRouter.navTo("Initial");  
+			this._oRouter.navTo("InitialDetail");
+			this._oRouter.navTo("InitialMaster");  
 			console.log("From StackOverFlow to Initial");
 		},
 	
