@@ -50,7 +50,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvDetail", {
 		var id = oParameters.arguments.qId;
 
 		var pathModel = "http://localhost:8080/com.sap.crawler/webapi/stackov/questions/"+id;
-		if (oParameters.name !== "qDetail") {
+		if (oParameters.name !== "questionDetail") {
 			return;
 		}
 

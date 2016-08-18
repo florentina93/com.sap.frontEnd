@@ -26,18 +26,18 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component",{
 			        {
 			        	pattern:"FacebookMaster",
 			        	name:"FacebookMaster",
-			        	view:"Master",
+			        	view:"FacebookMaster",
 			        	targetAggregation:"masterPages",
 			        },
 			        {
-			        	pattern:"postDetail/{postId}",
+			        	pattern:"postDetail/{pId}",
 			        	name:"postDetail",
-			        	view:"Detail",
+			        	view:"FacebookDetail",
 			        	targetAggregation:"detailPages",
 			        },
 			        {
-			        	pattern:"qDetail/{qId}",
-			        	name:"qDetail",
+			        	pattern:"questionDetail/{qId}",
+			        	name:"questionDetail",
 			        	view:"StackOvDetail",
 			        	targetAggregation:"detailPages",
 			        },

@@ -16,29 +16,23 @@
 							>
 					</SearchField>
 				</contentLeft>
-			</Bar>
-			<VBox>
+		</Bar>
+		<VBox>
 			<Text text="Select where to search in questions"/>
-				<!-- <HBox> -->
-				<RadioButton id="radioTitle" groupName="criteria" text="Title"/> 
-				<!-- <RadioButton id="radioEverything" groupName="criteria" text="Everything"/> -->
-				<RadioButton id="radioTag" groupName="criteria" text="Tag"/>
-				<RadioButton id="radioCreationDate" groupName="criteria" text="Creation Date"/>
-				<!-- </HBox> -->
-			</VBox>
-		
-			<List
+			<RadioButton id="radioTitle" groupName="criteria" text="Title"/> 
+			<RadioButton id="radioTag" groupName="criteria" text="Tag"/>
+			<RadioButton id="radioCreationDate" groupName="criteria" text="Creation Date"/>
+		</VBox>
+		<List
 			id="list"
 			items="{/QuestionsDetails}" 
 			mode="{device>/listMode}"
 			select="handleListSelect"
-			showNoData="false"
-			>
+			showNoData="false">
 			<StandardListItem
 				type="Active"
 				press="handleListItemPress"
-				title="{title}"
-			/>
+				title="{title}"/>
 		</List>
 	</Page>
 </core:View>

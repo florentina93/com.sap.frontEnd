@@ -1,0 +1,38 @@
+<core:View
+	controllerName="sap.ui.demo.myFiori.view.FacebookMaster"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<Page
+		title="{i18n>MasterTitle}"
+		showNavButton="true"
+		navButtonPress="handleNavButtonPress">
+	
+		<Bar>
+			<contentLeft>
+				<SearchField
+						id="servlet"
+						search="handleSearch"
+						width="100%">
+				</SearchField>
+			</contentLeft>
+		</Bar>
+		<VBox>
+			<Text text="Select where to search in posts"/>
+			<RadioButton id="radioName" groupName="criteria" text="Name"/> 
+			<RadioButton id="radioDescription" groupName="criteria" text="Description"/>
+			<RadioButton id="radioMessage" groupName="criteria" text="Message"/>
+			<RadioButton id="radioLink" groupName="criteria" text="Link to post"/>
+		</VBox>
+		<List
+			id="list"
+			items="{/PostDetails}" 
+			mode="{device>/listMode}"
+			select="handleListSelect"
+			showNoData="false">
+			<StandardListItem
+				type="Active"
+				press="handleListItemPress"
+				title="{name}"/>
+		</List>
+	</Page>
+</core:View>

@@ -1,4 +1,4 @@
-sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
+sap.ui.controller("sap.ui.demo.myFiori.view.FacebookDetail", {
 
 	getEventBus : function() {
 		var sComponentId = sap.ui.core.Component.getOwnerIdFor(this.getView());
@@ -45,7 +45,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 	onRouteMatched : function(oEvent) {
 		
 		var oParameters = oEvent.getParameters();
-		var id = oParameters.arguments.postId;
+		var id = oParameters.arguments.pId;
 		var pathModel = "http://localhost:8080/com.sap.crawler/webapi/facebook/posts/"+id;
 		if (oParameters.name !== "postDetail") {
 			return;
@@ -54,8 +54,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Detail", {
 		console.log(pathModel);
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.loadData(pathModel,"",false);
-		this.printDetails(JSON.parse(oModel.getData().Post[0]));
-		
+		this.printDetails(JSON.parse(oModel.getData().Post[0]));		
 		console.log(id)
 	}
 

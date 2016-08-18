@@ -5,8 +5,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.App", {
 	 * @param {string} pageId The id of the next page
 	 * @param {sap.ui.model.Context} context The data context to be applied to the next page (optional)
 	 */
-	to : function (pageId, context) {
-		
+	to : function (pageId, context) {		
 		var app = this.getView().app;
 		
 		// load page on demand

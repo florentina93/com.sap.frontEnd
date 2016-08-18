@@ -1,4 +1,4 @@
-sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
+sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 
 		getEventBus : function () {
 			var sComponentId = sap.ui.core.Component.getOwnerIdFor(this.getView());
@@ -9,37 +9,32 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 			return sap.ui.core.UIComponent.getRouterFor(this);
 		},
 	
-	onInit:function(){
-		
-		this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-		console.log("in master "+this._oRouter);
-		
-	    if (sap.ui.Device.system.phone) {
-			return;
-	}
-	   
-	},
-	handleNavButtonPress : function(evt) {
-		this._oRouter.navTo("Initial");  
-		console.log("From Facebook to Initial");
-	},
-	handleListItemPress : function (evt) {
-		var context = evt.getSource().getBindingContext(),
-			entry = context.getModel().getProperty(context.getPath());
-		
-		this._oRouter.navTo("postDetail",{postId:entry.id} );
-	},
-		
-		processRequest : function (e) {
-		    if (request.readyState == 4 && request.status == 200) {
-		        alert(request.responseText);
-		    }
+		onInit:function(){
+			
+			this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			console.log("in master "+this._oRouter);
+			
+		    if (sap.ui.Device.system.phone) {
+				return;
+		    }	   
 		},
-	
+		
+		handleNavButtonPress : function(evt) {
+			this._oRouter.navTo("Initial");  
+			console.log("From Facebook to Initial");
+		},
+		
+		handleListItemPress : function (evt) {
+			var context = evt.getSource().getBindingContext(),
+				entry = context.getModel().getProperty(context.getPath());
+			
+			this._oRouter.navTo("postDetail",{pId:entry.id} );
+		},
+		
 		handleSearch : function(evt){
 			this.getView().byId("list").setBusy(true);
 			var oModel = new sap.ui.model.json.JSONModel();
-			var pathModel = "http://localhost:8080/com.sap.crawler/webapi/facebook/posts/allDetails";
+			var pathModel = "http://localhost:8080/com.sap.crawler/webapi/facebook/posts";
 			var this1=this;
 			oModel.attachRequestCompleted(function() {
 				this1.getView().byId("list").setBusy(false);
@@ -87,8 +82,4 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 			var binding = list.getBinding("items");
 			binding.filter(aFilters);
 		},
-		
-		onSearch : function (evt) {
-					
-		}
 });
