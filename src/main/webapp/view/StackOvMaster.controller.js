@@ -19,9 +19,9 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 	    }
 	},
 	
-	handleNavButtonPress : function(evt) {
-		var oRouter = sap.ui.core.UIComponent.getRouterFor(this);  
-		oRouter.navTo("Initial");  
+	handleNavButtonPress : function(evt) { 
+		this._oRouter.navTo("Initial");  
+		console.log("after back pressed");
 	},
 	
 
