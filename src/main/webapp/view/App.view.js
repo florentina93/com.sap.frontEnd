@@ -29,4 +29,5 @@ sap.ui.jsview("sap.ui.demo.myFiori.view.App", {
 		// done
 		return this.app;
 	}
+
 });

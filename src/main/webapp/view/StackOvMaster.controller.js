@@ -16,34 +16,15 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 		
 	    if (sap.ui.Device.system.phone) {
 			return;
-	}
-	   // this.getRouter().attachRoutePatternMatched(this.onRouteMatched, this);
+	    }
+	},
+	
+	handleNavButtonPress : function(evt) {
+		var oRouter = sap.ui.core.UIComponent.getRouterFor(this);  
+		oRouter.navTo("Initial");  
 	},
 	
 
-//	onRouteMatched : function(oEvent) {		
-//		var sName = oEvent.getParameter("name");
-//
-//			if (sName !== "main") {
-//				return;
-//			}
-//
-//			//Load the detail view in desktop
-//			this._oRouter.myNavToWithoutHash({ 
-//				currentView : this.getView(),
-//				targetViewName : "sap.ui.demo.myFiori.view.Detail",
-//				targetViewType : "XML"
-//			});
-//
-//			//Wait for the list to be loaded once
-//			this.waitForInitialListLoading(function () {
-//
-//				//On the empty hash select the first item
-//				this.selectFirstItem();
-//
-//			});
-//
-//		},
 	
 	handleListItemPress : function (evt) {
 		var context = evt.getSource().getBindingContext(),
@@ -83,10 +64,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 					var filterTitle = new sap.ui.model.Filter("title", sap.ui.model.FilterOperator.Contains, query);
 					aFilters.push(filterTitle);
 				} 
-				if(tagButton == true) {
-					var filterTag = new sap.ui.model.Filter("tags", sap.ui.model.FilterOperator.Contains, query);
-					aFilters.push(filterTag);
-				}
+//				if(tagButton == true) {
+//					var filterTag = new sap.ui.model.Filter("tags", sap.ui.model.FilterOperator.Contains, query);
+//					aFilters.push(filterTag);
+//				}
 				if(creationDateButton == true) {
 					var filterCr = new sap.ui.model.Filter("creationDate", sap.ui.model.FilterOperator.Contains, query);
 					aFilters.push(filterCr);
@@ -97,8 +78,5 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 			var binding = list.getBinding("items");
 			binding.filter(aFilters);
 		},
-		
-		onSearch : function (evt) {
-					
-		}
+
 });

@@ -3,7 +3,9 @@
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core" >
 	<Page
-		title="{i18n>MasterTitle}">
+		title="{i18n>MasterTitle}"
+		showNavButton="true"
+		navButtonPress="handleNavButtonPress">
 	
 		<Bar>
 				<contentLeft>
