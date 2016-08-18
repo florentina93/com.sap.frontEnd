@@ -20,7 +20,7 @@
 		<VBox>
 			<Text text="Select where to search in questions"/>
 			<RadioButton id="radioTitle" groupName="criteria" text="Title"/> 
-			<RadioButton id="radioTag" groupName="criteria" text="Tag"/>
+			<RadioButton id="radioOwnerName" groupName="criteria" text="Owner Name"/>
 			<RadioButton id="radioCreationDate" groupName="criteria" text="Creation Date"/>
 		</VBox>
 		<List

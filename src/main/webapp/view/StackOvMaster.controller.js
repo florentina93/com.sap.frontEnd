@@ -55,7 +55,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 			console.log(query);
 			
 			var titleButton = this.getView().byId("radioTitle").getSelected();
-			var tagButton = this.getView().byId("radioTag").getSelected();
+			var ownerNameButton = this.getView().byId("radioOwnerName").getSelected();
 			var creationDateButton = this.getView().byId("radioCreationDate").getSelected();
 			
 			if(query && query.length > 0) {
@@ -68,10 +68,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 					var filterCr = new sap.ui.model.Filter("creationDate", sap.ui.model.FilterOperator.Contains, query);
 					aFilters.push(filterCr);
 				}
-//				if(tagButton == true) {
-//				var filterTag = new sap.ui.model.Filter("tags", sap.ui.model.FilterOperator.Contains, query);
-//				aFilters.push(filterTag);
-//			}
+				if(ownerNameButton == true) {
+					var filterOwner = new sap.ui.model.Filter("ownerName", sap.ui.model.FilterOperator.Contains, query);
+					aFilters.push(filterOwner);
+				}
 			}
 			
 			var list = this.getView().byId("list");
