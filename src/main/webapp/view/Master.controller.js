@@ -17,34 +17,12 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 	    if (sap.ui.Device.system.phone) {
 			return;
 	}
-	   // this.getRouter().attachRoutePatternMatched(this.onRouteMatched, this);
+	   
 	},
-	
-
-//	onRouteMatched : function(oEvent) {		
-//		var sName = oEvent.getParameter("name");
-//
-//			if (sName !== "main") {
-//				return;
-//			}
-//
-//			//Load the detail view in desktop
-//			this._oRouter.myNavToWithoutHash({ 
-//				currentView : this.getView(),
-//				targetViewName : "sap.ui.demo.myFiori.view.Detail",
-//				targetViewType : "XML"
-//			});
-//
-//			//Wait for the list to be loaded once
-//			this.waitForInitialListLoading(function () {
-//
-//				//On the empty hash select the first item
-//				this.selectFirstItem();
-//
-//			});
-//
-//		},
-	
+	handleNavButtonPress : function(evt) {
+		this._oRouter.navTo("Initial");  
+		console.log("From Facebook to Initial");
+	},
 	handleListItemPress : function (evt) {
 		var context = evt.getSource().getBindingContext(),
 			entry = context.getModel().getProperty(context.getPath());
