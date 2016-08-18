@@ -4,24 +4,28 @@
 	xmlns:core="sap.ui.core" >
 	<Page
 		title="{i18n>InitialTitle}">
-		<VBox>
-		<Label text="Choose the desired API" id=""/>
-		<HBox>
-		<Button text="Facebook"
+		<content>
+			<Label text="Choose the desired API" 
+				textAlign="Center" 
+				width="80%" 
+				class="sapUiSmallMargin"  
+				design="Bold" />
+			<HBox>
+				<Button text="Facebook"
 						press="onPressFacebook"
 						ariaDescribedBy="defaultButtonDescription genericButtonDescription">
-					<layoutData>
-						<FlexItemData growFactor="1" />
-					</layoutData>
-		</Button>
-		<Button text="Stack Overflow"
+						<layoutData>
+							<FlexItemData growFactor="1" />
+						</layoutData>
+				</Button>
+				<Button text="Stack Overflow"
 						press="onPressStackOv"
 						ariaDescribedBy="defaultButtonDescription genericButtonDescription">
-					<layoutData>
-						<FlexItemData growFactor="1" />
-					</layoutData>
-		</Button>
-		</HBox>
-		</VBox>
+						<layoutData>
+							<FlexItemData growFactor="1" />
+						</layoutData>
+				</Button>
+			</HBox>
+		</content>
 	</Page>
 </core:View>
