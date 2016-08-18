@@ -1,15 +1,23 @@
 <core:View
 	controllerName="sap.ui.demo.myFiori.view.InitialMaster"
 	xmlns="sap.m"
-	xmlns:core="sap.ui.core" >
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout">
 	<Page
 		title="{i18n>InitialTitle}">
-		<content>
-			<Label text="Choose the desired API" 
+		<!-- 	<Label text="Choose the desired API" 
 				textAlign="Center" 
 				width="80%" 
 				class="sapUiSmallMargin"  
-				design="Bold" />
+				design="Bold" /> -->
+			<Panel class="sapUiResponsiveContentPadding">
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Text text="Choose the desired API" class="sapMH4FontSize"/>
+						<ToolbarSpacer />
+					</Toolbar>
+				</headerToolbar>
+			<content>
 			<HBox>
 				<Button text="Facebook"
 						press="onPressFacebook"
@@ -26,6 +34,19 @@
 						</layoutData>
 				</Button>
 			</HBox>
+			<VBox>
+				<Image
+					src="http://www.slcba.net/wp-content/uploads/facebook-logo.jpg"
+					width="70%"
+					press="onPressFbPic">
+				</Image>
+				<Image
+					src="http://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-logo-med.png?v=6f86a5fa447f"
+					width="70%"
+					press="onPressStOvPic">
+				</Image>
+			</VBox>
 		</content>
+		</Panel>
 	</Page>
 </core:View>

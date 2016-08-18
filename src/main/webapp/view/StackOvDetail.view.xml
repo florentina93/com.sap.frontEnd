@@ -1,17 +1,34 @@
 <core:View
 	controllerName="sap.ui.demo.myFiori.view.StackOvDetail"
 	xmlns="sap.m"
-	xmlns:core="sap.ui.core" >
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form">
 	<Page
 		title="{i18n>DetailTitle}"
 		showNavButton="{device>/isPhone}"
-		navButtonPress="handleNavButtonPress" >
-		
-		<VBox>
-			<Label text="" id="titletext"/>
-			<Label text="" id="ownerNametext"/>
-			<Label text="" id="tagtext"/>
-			<Label text="" id="creationDatetext"/>
-		</VBox>
+		navButtonPress="handleNavButtonPress" 
+		class="sapUiResponsiveContentPadding">
+		<content>
+			<Panel>	
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Question Details: "/>
+						<ToolbarSpacer/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<f:SimpleForm>
+						<f:content>
+							<VBox>
+								<Label text="" id="titletext" class="sapUiSmallMargin" design="Bold"/>
+								<Label text="" id="ownerNametext" class="sapUiSmallMargin"/>
+								<Label text="" id="tagtext" class="sapUiSmallMargin"/>
+								<Label text="" id="creationDatetext" class="sapUiSmallMargin"/>
+							</VBox>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Panel>
+		</content>	
 	</Page>
 </core:View>

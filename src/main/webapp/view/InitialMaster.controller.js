@@ -28,4 +28,12 @@ sap.ui.controller("sap.ui.demo.myFiori.view.InitialMaster", {
 			this._oRouter.navTo("StackOvMaster");
 		},
 		
+		onPressFbPic:function(evt) {
+			this._oRouter.navTo("FacebookMaster");
+		},
+		
+		onPressStOvPic:function(evt) {
+			this._oRouter.navTo("StackOvMaster");
+		}
+		
 });
