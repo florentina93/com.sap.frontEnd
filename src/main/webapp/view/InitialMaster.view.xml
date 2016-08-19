@@ -38,12 +38,12 @@
 				<Image
 					src="http://www.slcba.net/wp-content/uploads/facebook-logo.jpg"
 					width="70%"
-					press="onPressFbPic">
+					press="onPressFacebook">
 				</Image>
 				<Image
 					src="http://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-logo-med.png?v=6f86a5fa447f"
 					width="70%"
-					press="onPressStOvPic">
+					press="onPressStackOv">
 				</Image>
 			</VBox>
 		</content>
