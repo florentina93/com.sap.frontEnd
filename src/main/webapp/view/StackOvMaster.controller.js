@@ -42,9 +42,9 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 				pathModel = "http://localhost:8080/com.sap.crawler/webapi/stackov/questions?tag="+query;
 			}
 			
-			var this1=this;
+			var stackOvController=this;
 			oModel.attachRequestCompleted(function() {
-				this1.getView().byId("list").setBusy(false);
+				stackOvController.getView().byId("list").setBusy(false);
 				console.log(oModel.getData());
 		    });
 			oModel.loadData(pathModel);	
