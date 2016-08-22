@@ -1,16 +1,11 @@
 sap.ui.controller("sap.ui.demo.myFiori.view.FacebookDetail", {
 
-	getEventBus : function() {
-		var sComponentId = sap.ui.core.Component.getOwnerIdFor(this.getView());
-		return sap.ui.component(sComponentId).getEventBus();
-	},
-
 	getRouter : function() {
 		return sap.ui.core.UIComponent.getRouterFor(this);
 	},
 
 	handleNavButtonPress : function(evt) {
-		this._oRouter.navTo("Master");
+		this.getRouter().navTo("Master");
 
 	},
 

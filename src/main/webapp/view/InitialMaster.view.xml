@@ -5,47 +5,26 @@
 	xmlns:l="sap.ui.layout">
 	<Page
 		title="{i18n>InitialTitle}">
-		<!-- 	<Label text="Choose the desired API" 
-				textAlign="Center" 
-				width="80%" 
-				class="sapUiSmallMargin"  
-				design="Bold" /> -->
-			<Panel class="sapUiResponsiveContentPadding">
+		<Panel>
 				<headerToolbar>
-					<Toolbar height="3rem">
+					<Toolbar height="4rem">
 						<Text text="Choose the desired API" class="sapMH4FontSize"/>
 						<ToolbarSpacer />
 					</Toolbar>
 				</headerToolbar>
 			<content>
-			<HBox>
-				<Button text="Facebook"
-						press="onPressFacebook"
-						ariaDescribedBy="defaultButtonDescription genericButtonDescription">
-						<layoutData>
-							<FlexItemData growFactor="1" />
-						</layoutData>
-				</Button>
-				<Button text="Stack Overflow"
-						press="onPressStackOv"
-						ariaDescribedBy="defaultButtonDescription genericButtonDescription">
-						<layoutData>
-							<FlexItemData growFactor="1" />
-						</layoutData>
-				</Button>
-			</HBox>
-			<VBox>
-				<Image
-					src="http://www.slcba.net/wp-content/uploads/facebook-logo.jpg"
-					width="70%"
-					press="onPressFacebook">
-				</Image>
-				<Image
-					src="http://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-logo-med.png?v=6f86a5fa447f"
-					width="70%"
-					press="onPressStackOv">
-				</Image>
-			</VBox>
+				<VBox>
+					<Image
+						src="http://www.slcba.net/wp-content/uploads/facebook-logo.jpg"
+						width="70%"
+						press="onPressFacebook">
+					</Image>
+					<Image
+						src="http://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-logo-med.png?v=6f86a5fa447f"
+						width="70%"
+						press="onPressStackOv">
+					</Image>
+				</VBox>
 		</content>
 		</Panel>
 	</Page>

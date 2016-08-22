@@ -1,18 +1,12 @@
 sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 
-		getEventBus : function () {
-			var sComponentId = sap.ui.core.Component.getOwnerIdFor(this.getView());
-			return sap.ui.component(sComponentId).getEventBus();
-		},
-
 		getRouter : function () {
 			return sap.ui.core.UIComponent.getRouterFor(this);
 		},
 	
 		onInit:function(){
 			
-			this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			console.log("in master "+this._oRouter);
+			console.log("in master "+this.getRouter());
 			
 		    if (sap.ui.Device.system.phone) {
 				return;
@@ -20,8 +14,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 		},
 		
 		handleNavButtonPress : function(evt) {
-			this._oRouter.navTo("InitialDetail");
-			this._oRouter.navTo("InitialMaster");  
+			this.getRouter().navTo("InitialDetail");
+			this.getRouter().navTo("InitialMaster");  
 			console.log("From Facebook to Initial");
 		},
 		
@@ -29,7 +23,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 			var context = evt.getSource().getBindingContext(),
 				entry = context.getModel().getProperty(context.getPath());
 			
-			this._oRouter.navTo("postDetail",{pId:entry.id} );
+			this.getRouter().navTo("postDetail",{pId:entry.id} );
 		},
 		
 		handleSearch : function(evt){

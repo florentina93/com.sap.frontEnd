@@ -1,8 +1,7 @@
 <core:View
 	controllerName="sap.ui.demo.myFiori.view.StackOvDetail"
 	xmlns="sap.m"
-	xmlns:core="sap.ui.core"
-	xmlns:f="sap.ui.layout.form">
+	xmlns:core="sap.ui.core">
 	<Page
 		title="{i18n>DetailTitle}"
 		showNavButton="{device>/isPhone}"
@@ -17,16 +16,12 @@
 					</Toolbar>
 				</headerToolbar>
 				<content>
-					<f:SimpleForm>
-						<f:content>
-							<VBox>
-								<Label text="" id="titletext" class="sapUiSmallMargin" design="Bold"/>
-								<Label text="" id="ownerNametext" class="sapUiSmallMargin"/>
-								<Label text="" id="tagtext" class="sapUiSmallMargin"/>
-								<Label text="" id="creationDatetext" class="sapUiSmallMargin"/>
-							</VBox>
-						</f:content>
-					</f:SimpleForm>
+					<VBox>
+						<Label text="" id="titletext" class="sapUiSmallMargin" design="Bold"/>
+						<Label text="" id="ownerNametext" class="sapUiSmallMargin"/>
+						<Label text="" id="tagtext" class="sapUiSmallMargin"/>
+						<Label text="" id="creationDatetext" class="sapUiSmallMargin"/>
+					</VBox>
 				</content>
 			</Panel>
 		</content>	
