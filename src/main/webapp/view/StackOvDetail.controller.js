@@ -45,6 +45,12 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvDetail", {
 		}else {	
 			this.getView().byId("questionLinktext").setText("");
 		}
+		
+		if(data.body != "") {
+			this.getView().byId("bodytext").setText("Question Body: " + data.body);
+		} else {
+			this.getView().byId("bodytext").setText("");
+		}
 	},
 	
 	onRouteMatched : function(oEvent) {

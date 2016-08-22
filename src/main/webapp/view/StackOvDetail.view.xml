@@ -21,7 +21,8 @@
 						<Link text="" id="questionLinktext" class="sapUiSmallMargin" target="_blank"/>
 						<Label text="" id="ownerNametext" class="sapUiSmallMargin"/>
 						<Label text="" id="tagtext" class="sapUiSmallMargin"/>
-						<Label text="" id="creationDatetext" class="sapUiSmallMargin"/>		
+						<Label text="" id="creationDatetext" class="sapUiSmallMargin"/>	
+						<Label text="" id="bodytext" class="sapUiSmallMargin"/>		
 					</VBox>
 				</content>
 			</Panel>
