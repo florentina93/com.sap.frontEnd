@@ -1,10 +1,5 @@
 sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 
-		getEventBus : function () {
-			var sComponentId = sap.ui.core.Component.getOwnerIdFor(this.getView());
-			return sap.ui.component(sComponentId).getEventBus();
-		},
-
 		getRouter : function () {
 			return sap.ui.core.UIComponent.getRouterFor(this);
 		},
@@ -28,31 +23,36 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 		handleListItemPress : function (evt) {
 			var context = evt.getSource().getBindingContext(),
 				entry = context.getModel().getProperty(context.getPath());
-			
-			this._oRouter.navTo("questionDetail",{qId:entry.id} );
-		},
-		
-		processRequest : function (e) {
-		    if (request.readyState == 4 && request.status == 200) {
-		        alert(request.responseText);
-		    }
+			console.log(this._oQuery);
+			this._oRouter.navTo("questionDetail",{qId:entry.id, tName:this._oQuery});
 		},
 	
 		handleSearch : function(evt){
 			this.getView().byId("list").setBusy(true);
 			var oModel = new sap.ui.model.json.JSONModel();
-			var pathModel = "http://localhost:8080/com.sap.crawler/webapi/stackov/questions";
+			
+			var tagButton = this.getView().byId("radioTag").getSelected();
+			var pathModel;
+			
+			var query = evt.getParameter("query");
+			console.log(query);
+			this._oQuery=query;
+			if(tagButton==false) this._oQuery="allTags";
+			pathModel="http://localhost:8080/com.sap.crawler/webapi/stackov/questions";
+			if((tagButton==true) && (query && query.length > 0)){
+				pathModel = "http://localhost:8080/com.sap.crawler/webapi/stackov/questions?tag="+query;
+			}
+			
 			var this1=this;
 			oModel.attachRequestCompleted(function() {
 				this1.getView().byId("list").setBusy(false);
 				console.log(oModel.getData());
 		    });
-			oModel.loadData(pathModel);		
+			oModel.loadData(pathModel);	
+			console.log(pathModel);
 			this.getView().setModel(oModel);
 			
 			var aFilters = [];
-			var query = evt.getParameter("query");
-			console.log(query);
 			
 			var titleButton = this.getView().byId("radioTitle").getSelected();
 			var ownerNameButton = this.getView().byId("radioOwnerName").getSelected();

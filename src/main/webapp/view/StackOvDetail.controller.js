@@ -1,10 +1,5 @@
 sap.ui.controller("sap.ui.demo.myFiori.view.StackOvDetail", {
 
-	getEventBus : function() {
-		var sComponentId = sap.ui.core.Component.getOwnerIdFor(this.getView());
-		return sap.ui.component(sComponentId).getEventBus();
-	},
-
 	getRouter : function() {
 		return sap.ui.core.UIComponent.getRouterFor(this);
 	},
@@ -48,8 +43,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvDetail", {
 		
 		var oParameters = oEvent.getParameters();
 		var id = oParameters.arguments.qId;
-
-		var pathModel = "http://localhost:8080/com.sap.crawler/webapi/stackov/questions/"+id;
+		var tag = oParameters.arguments.tName;
+		var pathModel = "http://localhost:8080/com.sap.crawler/webapi/stackov/questions/"+id+"?tag="+tag;
 		if (oParameters.name !== "questionDetail") {
 			return;
 		}
