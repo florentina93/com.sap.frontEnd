@@ -6,8 +6,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 	
 		onInit:function(){
 			console.log("in stackOv");
-			this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			console.log("in master "+this._oRouter);
+			console.log("in master "+this.getRouter());
 			
 		    if (sap.ui.Device.system.phone) {
 				return;
@@ -15,8 +14,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 		},
 		
 		handleNavButtonPress : function(evt) { 
-			this._oRouter.navTo("InitialDetail");
-			this._oRouter.navTo("InitialMaster");  
+			this.getRouter().navTo("InitialDetail");
+			this.getRouter().navTo("InitialMaster");  
 			console.log("From StackOverFlow to Initial");
 		},
 	
@@ -24,7 +23,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 			var context = evt.getSource().getBindingContext(),
 				entry = context.getModel().getProperty(context.getPath());
 			console.log(this._oQuery);
-			this._oRouter.navTo("questionDetail",{qId:entry.id, tName:this._oQuery});
+			this.getRouter().navTo("questionDetail",{qId:entry.id, tName:this._oQuery});
 		},
 	
 		handleSearch : function(evt){

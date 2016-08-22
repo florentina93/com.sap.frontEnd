@@ -5,7 +5,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvDetail", {
 	},
 
 	handleNavButtonPress : function(evt) {
-		this._oRouter.navTo("StackOvMaster");
+		this.getRouter().navTo("StackOvMaster");
 	},
 
 	onInit : function() {

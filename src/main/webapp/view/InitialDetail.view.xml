@@ -1,5 +1,5 @@
 <core:View
-	 controllerName="sap.ui.demo.myFiori.view.InitialDetail" 
+	controllerName="sap.ui.demo.myFiori.view.InitialDetail" 
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core" >
  	<Page
