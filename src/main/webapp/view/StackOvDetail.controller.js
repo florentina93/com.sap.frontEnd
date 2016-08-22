@@ -32,10 +32,18 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvDetail", {
 			this.getView().byId("tagtext").setText("");
 		}
 		
+		
 		if(data.ownerName != "") {
 			this.getView().byId("ownerNametext").setText("Owner Name: " + data.ownerName);
 		} else {
 			this.getView().byId("ownerNametext").setText("");
+		}
+		
+		if(data.questionLink != ""){
+			this.getView().byId("questionLinktext").setText("Link to question");
+			this.getView().byId("questionLinktext").setHref(data.questionLink);
+		}else {	
+			this.getView().byId("questionLinktext").setText("");
 		}
 	},
 	
