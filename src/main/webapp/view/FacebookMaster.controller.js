@@ -29,8 +29,14 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 		handleSearch : function(evt){
 			var query = evt.getParameter("query");
 			console.log("Query is: " + query);
+			
+			var descriptionButton = this.getView().byId("radioDescription").getSelected();
+			var nameButton = this.getView().byId("radioName").getSelected();
+			var messageButton = this.getView().byId("radioMessage").getSelected();
+			var linkButton = this.getView().byId("radioLink").getSelected();
+			console.log(descriptionButton);
 
-			if(query && query.length > 0) {
+			if(query && query.length > 0 && (descriptionButton || nameButton || messageButton || linkButton)) {
 				
 				this.getView().byId("list").setBusy(true);
 				var oModel = new sap.ui.model.json.JSONModel();
@@ -44,13 +50,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 				this.getView().setModel(oModel);
 				
 				var aFilters = [];
-				
-				var descriptionButton = this.getView().byId("radioDescription").getSelected();
-				var nameButton = this.getView().byId("radioName").getSelected();
-				var messageButton = this.getView().byId("radioMessage").getSelected();
-				var linkButton = this.getView().byId("radioLink").getSelected();
-				console.log(descriptionButton);
-				
 				var filterName;
 				var filterDesc;
 				var filterLink;

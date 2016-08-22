@@ -29,12 +29,17 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 		handleSearch : function(evt){
 			var query = evt.getParameter("query");
 			console.log("Query is: " + query);
-			if(query && query.length > 0) {
+			
+			var titleButton = this.getView().byId("radioTitle").getSelected();
+			var ownerNameButton = this.getView().byId("radioOwnerName").getSelected();
+			var tagButton = this.getView().byId("radioTag").getSelected();
+			var creationDateButton = this.getView().byId("radioCreationDate").getSelected();
+			console.log(titleButton);
+			
+			if(query && query.length > 0 && (titleButton || ownerNameButton || tagButton || creationDateButton)) {
 			
 				this.getView().byId("list").setBusy(true);
 				var oModel = new sap.ui.model.json.JSONModel();
-				
-				var tagButton = this.getView().byId("radioTag").getSelected();
 				var pathModel;
 				
 				this._oQuery=query;
@@ -54,10 +59,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 				this.getView().setModel(oModel);
 				
 				var aFilters = [];
-				
-				var titleButton = this.getView().byId("radioTitle").getSelected();
-				var ownerNameButton = this.getView().byId("radioOwnerName").getSelected();
-				var creationDateButton = this.getView().byId("radioCreationDate").getSelected();
 				
 				if(titleButton == true) {
 					var filterTitle = new sap.ui.model.Filter("title", sap.ui.model.FilterOperator.Contains, query);
