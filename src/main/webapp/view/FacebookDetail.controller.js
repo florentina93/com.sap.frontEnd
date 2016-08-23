@@ -49,8 +49,15 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookDetail", {
 
 		console.log(pathModel);
 		var oModel = new sap.ui.model.json.JSONModel();
-		oModel.loadData(pathModel,"",false);
-		this.printDetails(oModel.getData());		
+		facebookController=this;
+		facebookController.getView().setBusy(true);
+		oModel.attachRequestCompleted(function() {
+			facebookController.getView().setBusy(false);
+			facebookController.printDetails(oModel.getData());
+			console.log(oModel.getData());
+	    });
+		oModel.loadData(pathModel);
+				
 		console.log(id)
 	}
 
