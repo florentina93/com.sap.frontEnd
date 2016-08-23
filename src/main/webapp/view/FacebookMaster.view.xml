@@ -27,7 +27,7 @@
 		</VBox>
 		<List
 			id="list"
-			items="{/PostDetails}" 
+			items="{/}" 
 			mode="{device>/listMode}"
 			select="handleListSelect"
 			showNoData="false">

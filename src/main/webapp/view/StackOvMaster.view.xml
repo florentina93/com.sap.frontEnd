@@ -24,11 +24,12 @@
 				<RadioButton id="radioOwnerName" text="Owner Name"/>
 				<RadioButton id="radioTag" text="Tag"/>
 				<RadioButton id="radioCreationDate" text="Creation Date"/>
+				<RadioButton id="radioBody" text="Body"/>
 			</RadioButtonGroup>
 		</VBox>
 		<List
 			id="list"
-			items="{/QuestionsDetails}" 
+			items="{/}" 
 			mode="{device>/listMode}"
 			select="handleListSelect"
 			showNoData="false">

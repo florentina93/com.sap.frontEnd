@@ -39,6 +39,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 				this.getView().byId("list").setBusy(true);
 				var oModel = new sap.ui.model.json.JSONModel();
 				var pathModel = "http://localhost:8080/com.sap.crawler/webapi/facebook/posts/"+radioName+"?query="+query;
+				console.log(pathModel);
 				var facebookController=this;
 				oModel.attachRequestCompleted(function() {
 					facebookController.getView().byId("list").setBusy(false);
