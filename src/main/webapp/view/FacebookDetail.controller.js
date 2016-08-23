@@ -15,22 +15,22 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookDetail", {
 	},
 
 	printDetails : function(data){
-		if(data.name!="")
+		if(data.name!=null)
 			this.getView().byId("nametext").setText("Name: "+data.name);
 		else
 			this.getView().byId("nametext").setText("");
 		
-		if(data.description!="")
+		if(data.description!=null)
 			this.getView().byId("descriptiontext").setText("Description: "+data.description);
 		else
 			this.getView().byId("descriptiontext").setText("");
 		
-		if(data.message!="")
+		if(data.message!=null)
 			this.getView().byId("messagetext").setText("Message: "+data.message);
 		else
 			this.getView().byId("messagetext").setText("");
 		
-		if(data.linkId!=""){
+		if(data.id!=null){
 			this.getView().byId("idtext").setHref("http://fb.com/"+data.id);
 			this.getView().byId("idtext").setText("Link to post");
 		}
