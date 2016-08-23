@@ -26,22 +26,26 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvDetail", {
 			this.getView().byId("creationDatetext").setText("");
 		}
 		
-		if(data.tags != ""){
+		if(data.tags != null){
 			this.getView().byId("tagtext").setText("Tags: " + data.tags);
 		}else {	
 			this.getView().byId("tagtext").setText("");
 		}
 		
 		
-		if(data.ownerName != "") {
-			this.getView().byId("ownerNametext").setText("Owner Name: " + data.ownerName);
+		if(data.owner.displayName != "") {
+			this.getView().byId("ownerNametext").setText("Owner Name: " + data.owner.displayName);
 		} else {
 			this.getView().byId("ownerNametext").setText("");
 		}
 		
-		if(data.questionLink != ""){
+		if(data.questionId != "" && data.title != ""){
+//			var title = data.title;
+//			title.replace(" ", '-');
 			this.getView().byId("questionLinktext").setText("Link to question");
-			this.getView().byId("questionLinktext").setHref(data.questionLink);
+			this.getView().byId("questionLinktext").setHref("http://stackoverflow.com/questions/"+data.questionId+"/"+data.title);
+			
+			console.log("http://stackoverflow.com/questions/"+data.questionId+"/"+data.title);
 		}else {	
 			this.getView().byId("questionLinktext").setText("");
 		}
@@ -57,7 +61,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvDetail", {
 		
 		var oParameters = oEvent.getParameters();
 		var id = oParameters.arguments.qId;
-		var tag = oParameters.arguments.tName;
 		var pathModel = "http://localhost:8080/com.sap.crawler/webapi/stackov/questions/Id/"+id;
 		if (oParameters.name !== "questionDetail") {
 			return;
@@ -65,8 +68,14 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvDetail", {
 
 		console.log(pathModel);
 		var oModel = new sap.ui.model.json.JSONModel();
-		oModel.loadData(pathModel,"",false);
-		this.printDetails(oModel.getData());
+		stackOvController = this;
+		stackOvController.getView().setBusy(true);
+		oModel.attachRequestCompleted(function() {
+			stackOvController.getView().setBusy(false);
+			stackOvController.printDetails(oModel.getData());
+			console.log(oModel.getData());
+		});
+		oModel.loadData(pathModel);
 		
 		console.log(id)
 	}
