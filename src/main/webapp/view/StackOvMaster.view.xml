@@ -19,10 +19,12 @@
 		</Bar>
 		<VBox>
 			<Text text="Select where to search in questions"/>
-			<RadioButton id="radioTitle" groupName="criteria" text="Title"/> 
-			<RadioButton id="radioOwnerName" groupName="criteria" text="Owner Name"/>
-			<RadioButton id="radioTag" groupName="criteria" text="Tag"/>
-			<RadioButton id="radioCreationDate" groupName="criteria" text="Creation Date"/>
+			<RadioButtonGroup id="radioGroup">
+				<RadioButton id="radioTitle" text="Title"/> 
+				<RadioButton id="radioOwnerName" text="Owner Name"/>
+				<RadioButton id="radioTag" text="Tag"/>
+				<RadioButton id="radioCreationDate" text="Creation Date"/>
+			</RadioButtonGroup>
 		</VBox>
 		<List
 			id="list"

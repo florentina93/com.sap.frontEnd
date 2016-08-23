@@ -18,10 +18,12 @@
 		</Bar>
 		<VBox>
 			<Text text="Select where to search in posts"/>
-			<RadioButton id="radioName" groupName="criteria" text="Name"/> 
-			<RadioButton id="radioDescription" groupName="criteria" text="Description"/>
-			<RadioButton id="radioMessage" groupName="criteria" text="Message"/>
-			<RadioButton id="radioLink" groupName="criteria" text="Link to post"/>
+			<RadioButtonGroup id="radioGroup">
+				<RadioButton id="radioName" text="Name"/> 
+				<RadioButton id="radioDescription" text="Description"/>
+				<RadioButton id="radioMessage" text="Message"/>
+				<RadioButton id="radioLink" text="Link to post"/>
+			</RadioButtonGroup>
 		</VBox>
 		<List
 			id="list"

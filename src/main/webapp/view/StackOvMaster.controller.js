@@ -29,25 +29,21 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 		handleSearch : function(evt){
 			var query = evt.getParameter("query");
 			console.log("Query is: " + query);
+			//console.log(escape(this.getView().byId("radioGroup").getSelectedButton().getText()));
 			
-			var titleButton = this.getView().byId("radioTitle").getSelected();
-			var ownerNameButton = this.getView().byId("radioOwnerName").getSelected();
-			var tagButton = this.getView().byId("radioTag").getSelected();
-			var creationDateButton = this.getView().byId("radioCreationDate").getSelected();
-			console.log(titleButton);
+			var radioActive=this.getView().byId("radioGroup").getSelectedButton();
+			var radioName = radioActive.getId().substring(17, radioActive.getId().length);
+			console.log(radioName);
 			
-			if(query && query.length > 0 && (titleButton || ownerNameButton || tagButton || creationDateButton)) {
+			if(query && query.length > 0 && (radioActive)) {
 			
 				this.getView().byId("list").setBusy(true);
 				var oModel = new sap.ui.model.json.JSONModel();
 				var pathModel;
 				
 				this._oQuery=query;
-				if(tagButton==false) this._oQuery="allTags";
-				pathModel="http://localhost:8080/com.sap.crawler/webapi/stackov/questions";
-				if(tagButton==true) {
-					pathModel = "http://localhost:8080/com.sap.crawler/webapi/stackov/questions?tag="+query;
-				}
+				if(radioActive.getId().substring(12, radioActive.getId().length)!="radioTag") this._oQuery="allTags";
+				pathModel="http://localhost:8080/com.sap.crawler/webapi/stackov/questions/"+radioName+"?query="+query;
 				
 				var stackOvController=this;
 				oModel.attachRequestCompleted(function() {
@@ -57,27 +53,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 				oModel.loadData(pathModel);	
 				console.log(pathModel);
 				this.getView().setModel(oModel);
-				
-				var aFilters = [];
-				
-				if(titleButton == true) {
-					var filterTitle = new sap.ui.model.Filter("title", sap.ui.model.FilterOperator.Contains, query);
-					aFilters.push(filterTitle);
-				} 
-	
-				if(creationDateButton == true) {
-					var filterCr = new sap.ui.model.Filter("creationDate", sap.ui.model.FilterOperator.Contains, query);
-					aFilters.push(filterCr);
-				}
-				if(ownerNameButton == true) {
-					var filterOwner = new sap.ui.model.Filter("ownerName", sap.ui.model.FilterOperator.Contains, query);
-					aFilters.push(filterOwner);
-				}			
-				
-				var list = this.getView().byId("list");
-				var binding = list.getBinding("items");
-				binding.filter(aFilters); 
 			}
-		},
+		}
 
 });
