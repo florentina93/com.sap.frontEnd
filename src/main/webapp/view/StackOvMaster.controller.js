@@ -23,7 +23,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 			var context = evt.getSource().getBindingContext(),
 				entry = context.getModel().getProperty(context.getPath());
 			console.log(this._oQuery);
-			this.getRouter().navTo("questionDetail",{qId:entry.id, tName:this._oQuery});
+			this.getRouter().navTo("questionDetail",{qId:entry.questionId});
 		},
 	
 		handleSearch : function(evt){

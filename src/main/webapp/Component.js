@@ -36,7 +36,7 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component",{
 			        	targetAggregation:"detailPages",
 			        },
 			        {
-			        	pattern:"questionDetail/{qId}/{tName}",
+			        	pattern:"questionDetail/{qId}",
 			        	name:"questionDetail",
 			        	view:"StackOvDetail",
 			        	targetAggregation:"detailPages",

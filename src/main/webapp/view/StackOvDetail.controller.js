@@ -66,7 +66,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvDetail", {
 		console.log(pathModel);
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.loadData(pathModel,"",false);
-		this.printDetails(oModel.getData().Question[0]);
+		this.printDetails(oModel.getData());
 		
 		console.log(id)
 	}
