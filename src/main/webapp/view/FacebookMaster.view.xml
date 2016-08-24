@@ -27,14 +27,14 @@
 		</VBox>
 		<List
 			id="list"
-			items="{/}" 
+			items="items"
 			mode="{device>/listMode}"
 			select="handleListSelect"
 			showNoData="false">
-			<StandardListItem
+		<!-- 	<StandardListItem
 				type="Active"
 				press="handleListItemPress"
-				title="{name}"/>
+				title="{name}"/> -->
 		</List>
 	</Page>
 </core:View>
