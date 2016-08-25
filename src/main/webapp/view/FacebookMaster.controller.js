@@ -42,6 +42,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 				oItem.attachPress(this.handleListItemPress);	
 				oItem.setType(sap.m.ListType.Active);
 				if(data[i].name==null){
+					oItem.setIcon("http://www.medikeen.com/site/wordpress/wp-content/uploads/2015/05/arrow-25-512.gif");	
+					oItem.setIconInset(false);
 					if(radioName=="Description"){
 						oItem.setTitle(data[i].description);
 					}
