@@ -27,14 +27,21 @@
 		</VBox>
 		<List
 			id="list"
-			items="items"
+			
 			mode="{device>/listMode}"
 			select="handleListSelect"
-			showNoData="false">
-		<!-- 	<StandardListItem
+			showNoData="false"
+			growing="true"
+            inset = "false"
+            growingThreshold = "5"
+            delete = "deleteItem"
+            growingTriggerText = ""
+            growingScrollToLoad = "true">
+	<!-- 		<StandardListItem
+				id="sList"
 				type="Active"
 				press="handleListItemPress"
-				title="{name}"/> -->
+				title="{name}"/>  -->
 		</List>
 	</Page>
 </core:View>

@@ -13,7 +13,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 		},
 		
 		cleanPage : function()  {  
-			
+			 
 		},
 		
 		onBeforeRendering:function(){
@@ -23,26 +23,39 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 		handleNavButtonPress : function(evt) {
 			this.getRouter().navTo("InitialDetail");
 			this.getRouter().navTo("InitialMaster");
-			var oModel = new sap.ui.model.json.JSONModel();
-			this.getView().setModel(oModel);
 			console.log("From Facebook to Initial");
 		},
 		
+		
+		
 		handleListItemPress : function (evt) {
-			var context = evt.getSource().getBindingContext(),
-				entry = this.getView().getModel().getProperty(context.getPath());
-			
-			this.getRouter().navTo("postDetail",{pId:entry.id} );
+			var entry = evt.getSource().getBindingContext();	
+			facebookController.getRouter().navTo("postDetail",{pId:entry.id} );
 		},
 		
 		printNames:function(data){
 			var i=0;
+			this.getView().byId("list").removeAllItems();
+			facebookController=this;
 			while(i<data.length){
 				var oItem = new sap.m.StandardListItem();
-				this.getView().byId("list").bindItems("items",oItem);
-				oItem.attachPress(this.handleListItemPress);
+				oItem.attachPress(this.handleListItemPress);	
 				oItem.setType(sap.m.ListType.Active);
-				oItem.setTitle(data[i].name);
+				if(data[i].name==null){
+					if(radioName=="Description"){
+						oItem.setTitle(data[i].description);
+					}
+					else if(radioName=="Message"){
+						oItem.setTitle(data[i].message);
+					}
+					else if(radioName=="Link"){
+						oItem.setTitle(data[i].id);
+					}
+				}
+				else {
+					oItem.setTitle(data[i].name);
+				}
+				oItem.setBindingContext(data[i]);
 				this.getView().byId("list").addItem(oItem);
 				i++;
 			}
@@ -54,9 +67,9 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 			console.log("Query is: " + query);
 			
 			var radioActive=this.getView().byId("radioGroup").getSelectedButton();
-			var radioName = radioActive.getId().substring(17, radioActive.getId().length);
+			radioName = radioActive.getId().substring(17, radioActive.getId().length);
 			console.log(radioName);
-
+			
 			if(query && query.length > 0 && (radioActive)) {
 				
 				this.getView().byId("list").setBusy(true);
@@ -70,7 +83,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 					facebookController.printNames(oModel.getData());
 					
 			    });
-				oModel.loadData(pathModel);		
+				oModel.loadData(pathModel);	
 				this.getView().setModel(oModel);
 			}
 		},
