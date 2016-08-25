@@ -21,7 +21,9 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvDetail", {
 		}
 		
 		if(data.creationDate != "") {
-			this.getView().byId("creationDatetext").setText("Creation Date: " + data.creationDate);
+			this.getView().byId("creationDatetext").setText("Creation Date: " + new Date(data.creationDate));
+			console.log(new Date(data.creationDate));
+			
 		} else {
 			this.getView().byId("creationDatetext").setText("");
 		}
@@ -42,7 +44,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvDetail", {
 		if(data.questionId != "" && data.title != ""){
 //			var title = data.title;
 //			title.replace(" ", '-');
-			this.getView().byId("questionLinktext").setText("Link to question");
+			this.getView().byId("questionLinktext").setText("http://stackoverflow.com/questions/"+data.questionId+"/"+data.title);
 			this.getView().byId("questionLinktext").setHref("http://stackoverflow.com/questions/"+data.questionId+"/"+data.title);
 			
 			console.log("http://stackoverflow.com/questions/"+data.questionId+"/"+data.title);

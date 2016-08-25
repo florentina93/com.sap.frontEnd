@@ -18,7 +18,10 @@
 				<content>
 					<VBox>
 						<Label text="" id="titletext" class="sapUiSmallMargin" design="Bold"/>
-						<Link text="" id="questionLinktext" class="sapUiSmallMargin" target="_blank"/>
+						<HBox>
+							<Label text="Link to question: " class="sapUiSmallMargin"/> 
+							<Link text="" id="questionLinktext" class="sapUiSmallMargin" target="_blank"/>
+						</HBox>
 						<Label text="" id="ownerNametext" class="sapUiSmallMargin"/>
 						<Label text="" id="tagtext" class="sapUiSmallMargin"/>
 						<Label text="" id="creationDatetext" class="sapUiSmallMargin"/>	
