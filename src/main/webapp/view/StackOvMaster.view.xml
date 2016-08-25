@@ -32,7 +32,12 @@
 			items="{/}" 
 			mode="{device>/listMode}"
 			select="handleListSelect"
-			showNoData="false">
+			showNoData="false"
+			growing="true"
+			growingScrollToLoad="true"
+			growingThreshold="7"
+			growingTriggerText="Scroll down for more"
+			>
 			<StandardListItem
 				type="Active"
 				press="handleListItemPress"

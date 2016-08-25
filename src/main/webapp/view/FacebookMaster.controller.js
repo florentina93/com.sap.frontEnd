@@ -17,7 +17,11 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 		},
 		
 		onBeforeRendering:function(){
-			console.log("before RENERING");
+			console.log("BEFORE RENDERING");
+		},
+		
+		onAfterRendering: function() {
+			console.log("AFTER RENDERING")
 		},
 		
 		handleNavButtonPress : function(evt) {

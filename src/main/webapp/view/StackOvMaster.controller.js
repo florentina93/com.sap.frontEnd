@@ -50,6 +50,16 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 					stackOvController.getView().byId("list").setBusy(false);
 					console.log(oModel.getData());
 			    });
+//				oModel.attachRequestCompleted(function() {
+//					if(oModel.getData().length == 0) {
+//						stackOvController.byId("list").setShowNoData(true);
+//						console.log("setting show no data on TRUE " + oModel.getData().length);
+//					} else {
+//						stackOvController.byId("list").setShowNoData(false);
+//						console.log("setting show no data on FALSE " + oModel.getData().length);
+//
+//					}
+//				});
 				oModel.loadData(pathModel);	
 				console.log(pathModel);
 				this.getView().setModel(oModel);
