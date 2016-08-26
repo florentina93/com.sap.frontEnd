@@ -27,17 +27,20 @@
 		</VBox>
 		<List
 			id="list"
+			items="{/}"
 			mode="{device>/listMode}"
 			showNoData="false"
 			growing="true"
-            growingThreshold = "5"
-            growingTriggerText = ""
-            growingScrollToLoad = "true">
-	<!-- 		<StandardListItem
-				id="sList"
+            growingThreshold = "7"
+            growingTriggerText = "scroll for more"
+            growingScrollToLoad = "true"
+            >
+		<StandardListItem
 				type="Active"
+				icon="{icon}"
+				iconInset="false"
 				press="handleListItemPress"
-				title="{name}"/>  -->
+				title="{name}"/>  
 		</List>
 	</Page>
 </core:View>

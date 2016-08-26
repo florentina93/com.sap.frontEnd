@@ -6,14 +6,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 	
 		onInit:function(){
 			console.log("in master "+this.getRouter());
-			this.getRouter().attachRouteMatched(this.cleanPage , this);
+			//this.getRouter().attachRouteMatched(this.cleanPage , this);
 		    if (sap.ui.Device.system.phone) {
 				return;
-		    }	  
-		},
-		
-		cleanPage : function()  {  
-			 
+		    }	  		 
 		},
 		
 		onBeforeRendering:function(){
@@ -28,44 +24,37 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 			this.getRouter().navTo("InitialDetail");
 			this.getRouter().navTo("InitialMaster");
 			console.log("From Facebook to Initial");
-		},
-		
-		
+		},		
 		
 		handleListItemPress : function (evt) {
-			var entry = evt.getSource().getBindingContext();	
-			facebookController.getRouter().navTo("postDetail",{pId:entry.id} );
+			var context = evt.getSource().getBindingContext(),
+			entry = context.getModel().getProperty(context.getPath());	
+			this.getRouter().navTo("postDetail",{pId:entry.id} );
 		},
 		
-		printNames:function(data){
+		printNames:function(oModel){
+			data=oModel.getData();
 			var i=0;
 			this.getView().byId("list").removeAllItems();
-			facebookController=this;
 			while(i<data.length){
-				var oItem = new sap.m.StandardListItem();
-				oItem.attachPress(this.handleListItemPress);	
-				oItem.setType(sap.m.ListType.Active);
 				if(data[i].name==null){
-					oItem.setIcon("http://www.medikeen.com/site/wordpress/wp-content/uploads/2015/05/arrow-25-512.gif");	
-					oItem.setIconInset(false);
+					data[i].icon="http://www.medikeen.com/site/wordpress/wp-content/uploads/2015/05/arrow-25-512.gif";
 					if(radioName=="Description"){
-						oItem.setTitle(data[i].description);
+						data[i].name=data[i].description;
 					}
 					else if(radioName=="Message"){
-						oItem.setTitle(data[i].message);
+						data[i].name=data[i].message;
 					}
 					else if(radioName=="Link"){
-						oItem.setTitle(data[i].id);
+						data[i].name=data[i].id;
 					}
 				}
-				else {
-					oItem.setTitle(data[i].name);
-				}
-				oItem.setBindingContext(data[i]);
-				this.getView().byId("list").addItem(oItem);
 				i++;
 			}
 			
+			oModel.setData(data);
+			console.log(oModel.getData());
+			this.getView().setModel(oModel);
 		},
 		
 		handleSearch : function(evt){
@@ -86,11 +75,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 				oModel.attachRequestCompleted(function() {
 					facebookController.getView().byId("list").setBusy(false);
 					console.log(oModel.getData());
-					facebookController.printNames(oModel.getData());
+					facebookController.printNames(oModel);
 					
 			    });
 				oModel.loadData(pathModel);	
-				this.getView().setModel(oModel);
 			}
 		},
 });
