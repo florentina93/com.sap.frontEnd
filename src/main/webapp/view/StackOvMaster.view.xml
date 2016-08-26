@@ -31,6 +31,7 @@
 			id="list"
 			items="{/}" 
 			mode="{device>/listMode}"
+			select="handleListSelect"
 			showNoData="false"
 			growing="true"
 			growingScrollToLoad="true"

@@ -81,14 +81,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 					facebookController.getView().byId("list").setBusy(false);
 					console.log(oModel.getData());
 					facebookController.printNames(oModel);
-					if(oModel.getData().length == 0) {
-						facebookController.byId("list").setShowNoData(true);
-						console.log("setting show no data on TRUE " + oModel.getData().length);
-					} else {
-						facebookController.byId("list").setShowNoData(false);
-						console.log("setting show no data on FALSE " + oModel.getData().length);
-
-					}
 					
 			    });
 				oModel.loadData(pathModel);	
