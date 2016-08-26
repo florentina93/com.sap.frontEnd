@@ -16,8 +16,9 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 		handleNavButtonPress : function(evt) { 
 			this.getRouter().navTo("InitialDetail");
 			this.getRouter().navTo("InitialMaster");  
-			oModel.setData(null);
-			console.log("Inside handleNavButtonPress and model is: " + oModel.getData());
+			var emptyModel = new sap.ui.model.json.JSONModel();
+			this.getView().setModel(emptyModel);
+			console.log("Inside handleNavButtonPress stackOv and model is: " + emptyModel.getData());
 			console.log("From StackOverFlow to Initial");
 		},
 	
@@ -40,7 +41,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 			if(query && query.length > 0 && (radioActive)) {
 			
 				this.getView().byId("list").setBusy(true);
-				oModel = new sap.ui.model.json.JSONModel();
+				var oModel = new sap.ui.model.json.JSONModel();
 				var pathModel;
 				
 				this._oQuery=query;
@@ -50,7 +51,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 				var stackOvController=this;
 				oModel.attachRequestCompleted(function() {
 					stackOvController.getView().byId("list").setBusy(false);
-					console.log(oModel.getData());
+					//console.log(oModel.getData());
 					if(oModel.getData().length == 0) {
 						stackOvController.byId("list").setShowNoData(true);
 						console.log("setting show no data on TRUE " + oModel.getData().length);
