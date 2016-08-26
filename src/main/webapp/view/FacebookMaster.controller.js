@@ -17,13 +17,18 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 		},
 		
 		onAfterRendering: function() {
-			console.log("AFTER RENDERING")
+			console.log("AFTER RENDERING");
+		},
+		onExit: function() {
+			console.log("ON EXIT");
 		},
 		
 		handleNavButtonPress : function(evt) {
 			this.getRouter().navTo("InitialDetail");
 			this.getRouter().navTo("InitialMaster");
 			console.log("From Facebook to Initial");
+			oModel.setData(null);
+			console.log("Inside handleNavButtonPress and model is: " + oModel.getData());
 		},		
 		
 		handleListItemPress : function (evt) {
@@ -68,7 +73,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 			if(query && query.length > 0 && (radioActive)) {
 				
 				this.getView().byId("list").setBusy(true);
-				var oModel = new sap.ui.model.json.JSONModel();
+				oModel = new sap.ui.model.json.JSONModel();
 				var pathModel = "http://localhost:8080/com.sap.crawler/webapi/facebook/posts/"+radioName+"?query="+query;
 				console.log(pathModel);
 				var facebookController=this;

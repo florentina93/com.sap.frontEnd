@@ -16,6 +16,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 		handleNavButtonPress : function(evt) { 
 			this.getRouter().navTo("InitialDetail");
 			this.getRouter().navTo("InitialMaster");  
+			oModel.setData(null);
+			console.log("Inside handleNavButtonPress and model is: " + oModel.getData());
 			console.log("From StackOverFlow to Initial");
 		},
 	
@@ -24,7 +26,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 				entry = context.getModel().getProperty(context.getPath());
 			console.log(this._oQuery);
 			this.getRouter().navTo("questionDetail",{qId:entry.questionId});
-			console.log(this.getView().byId("list").getSelectedItems());
 		},
 	
 		handleSearch : function(evt){
@@ -39,7 +40,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 			if(query && query.length > 0 && (radioActive)) {
 			
 				this.getView().byId("list").setBusy(true);
-				var oModel = new sap.ui.model.json.JSONModel();
+				oModel = new sap.ui.model.json.JSONModel();
 				var pathModel;
 				
 				this._oQuery=query;
