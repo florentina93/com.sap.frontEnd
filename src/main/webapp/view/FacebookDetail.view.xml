@@ -17,11 +17,11 @@
 				</headerToolbar>
 				<content>
 					<VBox>			
-						<Label text="" id="nametext" class="sapUiSmallMargin" design="Bold"/>
+						<Text text="" id="nametext" class="sapUiSmallMargin" design="Bold"/>
 						<Link text="" id="idtext" class="sapUiSmallMargin"
 						target="_blank"/>
-						<Label text="" id="messagetext" wrapping="false" class="sapUiSmallMargin"/>
-						<Label text="" id="descriptiontext" class="sapUiSmallMargin"/>
+						<Text text="" id="messagetext" class="sapUiSmallMargin"/>
+						<Text text="" id="descriptiontext" class="sapUiSmallMargin"/>
 					</VBox>
 				</content>
 			</Panel>

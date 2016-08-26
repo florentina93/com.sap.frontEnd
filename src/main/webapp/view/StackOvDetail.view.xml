@@ -17,15 +17,15 @@
 				</headerToolbar>
 				<content>
 					<VBox>
-						<Label text="" id="titletext" class="sapUiSmallMargin" design="Bold"/>
+						<Text text="" id="titletext" class="sapUiSmallMargin" design="Bold"/>
 						<HBox>
-							<Label text="Link to question: " class="sapUiSmallMargin"/> 
+							<Text text="Link to question: " class="sapUiSmallMargin"/> 
 							<Link text="" id="questionLinktext" class="sapUiSmallMargin" target="_blank"/>
 						</HBox>
-						<Label text="" id="ownerNametext" class="sapUiSmallMargin"/>
-						<Label text="" id="tagtext" class="sapUiSmallMargin"/>
-						<Label text="" id="creationDatetext" class="sapUiSmallMargin"/>	
-						<Label text="" id="bodytext" class="sapUiSmallMargin"/>		
+						<Text text="" id="ownerNametext" class="sapUiSmallMargin"/>
+						<Text text="" id="tagtext" class="sapUiSmallMargin"/>
+						<Text text="" id="creationDatetext" class="sapUiSmallMargin"/>	
+						<Text text="" id="bodytext" class="sapUiSmallMargin"/>		
 					</VBox>
 				</content>
 			</Panel>
