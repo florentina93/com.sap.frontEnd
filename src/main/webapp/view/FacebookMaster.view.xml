@@ -27,14 +27,10 @@
 		</VBox>
 		<List
 			id="list"
-			
 			mode="{device>/listMode}"
-			select="handleListSelect"
 			showNoData="false"
 			growing="true"
-            inset = "false"
             growingThreshold = "5"
-            delete = "deleteItem"
             growingTriggerText = ""
             growingScrollToLoad = "true">
 	<!-- 		<StandardListItem

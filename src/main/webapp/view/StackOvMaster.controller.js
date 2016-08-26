@@ -24,6 +24,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 				entry = context.getModel().getProperty(context.getPath());
 			console.log(this._oQuery);
 			this.getRouter().navTo("questionDetail",{qId:entry.questionId});
+			console.log(this.getView().byId("list").getSelectedItems());
 		},
 	
 		handleSearch : function(evt){
@@ -49,17 +50,15 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 				oModel.attachRequestCompleted(function() {
 					stackOvController.getView().byId("list").setBusy(false);
 					console.log(oModel.getData());
-			    });
-//				oModel.attachRequestCompleted(function() {
-//					if(oModel.getData().length == 0) {
-//						stackOvController.byId("list").setShowNoData(true);
-//						console.log("setting show no data on TRUE " + oModel.getData().length);
-//					} else {
-//						stackOvController.byId("list").setShowNoData(false);
-//						console.log("setting show no data on FALSE " + oModel.getData().length);
-//
-//					}
-//				});
+					if(oModel.getData().length == 0) {
+						stackOvController.byId("list").setShowNoData(true);
+						console.log("setting show no data on TRUE " + oModel.getData().length);
+					} else {
+						stackOvController.byId("list").setShowNoData(false);
+						console.log("setting show no data on FALSE " + oModel.getData().length);
+
+					}
+				});
 				oModel.loadData(pathModel);	
 				console.log(pathModel);
 				this.getView().setModel(oModel);
