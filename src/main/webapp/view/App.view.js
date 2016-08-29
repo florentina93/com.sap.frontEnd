@@ -13,7 +13,7 @@ sap.ui.jsview("sap.ui.demo.myFiori.view.App", {
 		this.app = new sap.m.SplitApp("splitApp",{});
 		
 		// load the master page
-		var master = sap.ui.xmlview("Master", "sap.ui.demo.myFiori.view.FacebookMaster");
+		var master = sap.ui.xmlview("Master", "sap.ui.demo.myFiori.view.InitialMaster");
 		master.getController().nav = this.getController();
 		this.app.addPage(master, true);
 		
@@ -22,10 +22,10 @@ sap.ui.jsview("sap.ui.demo.myFiori.view.App", {
 		detail.getController().nav = this.getController();
 		this.app.addPage(detail, false);
 		
-		//load the empty page created
-		var empty = sap.ui.xmlview("Empty", "sap.ui.demo.myFiori.view.Empty");
-		this.app.addPage(empty, false);
-		
+//		//load the empty page created
+//		var empty = sap.ui.xmlview("Empty", "sap.ui.demo.myFiori.view.Empty");
+//		this.app.addPage(empty, false);
+//		
 		// done
 		return this.app;
 	}

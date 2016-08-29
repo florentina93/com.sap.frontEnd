@@ -18,8 +18,10 @@
 				<content>
 					<VBox>			
 						<Text text="" id="nametext" class="sapUiSmallMargin" design="Bold"/>
-						<Link text="" id="idtext" class="sapUiSmallMargin"
-						target="_blank"/>
+						<HBox>
+							<Text text="Link to post: " class="sapUiSmallMargin" />
+							<Link text="" id="idtext" class="sapUiSmallMargin" target="_blank"/>				
+						</HBox>		
 						<Text text="" id="messagetext" class="sapUiSmallMargin"/>
 						<Text text="" id="descriptiontext" class="sapUiSmallMargin"/>
 					</VBox>

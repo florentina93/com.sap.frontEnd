@@ -31,8 +31,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookDetail", {
 			this.getView().byId("messagetext").setText("");
 		
 		if(data.id!=null){
-			this.getView().byId("idtext").setHref("http://fb.com/"+data.id);
-			this.getView().byId("idtext").setText("Link to post");
+			this.getView().byId("idtext").setText("http://fb.com/"+data.id);
+			this.getView().byId("idtext").setHref("http://fb.com/"+data.id);		
 		}
 		else
 			this.getView().byId("idtext").setText("");
