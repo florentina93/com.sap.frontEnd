@@ -29,6 +29,11 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookDetail", {
 			this.getView().byId("image").setHeight("0px");
 		}
 		
+		if(data.story!=null)
+			this.getView().byId("storytext").setText("Story: "+data.story);
+		else
+			this.getView().byId("storytext").setText("");
+		
 		if(data.from!=null && data.from.name !=null)
 			this.getView().byId("fromtext").setText("Posted by: "+data.from.name);
 		else
