@@ -20,6 +20,20 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookDetail", {
 		else
 			this.getView().byId("nametext").setText("");
 		
+		if(data.picture!=null){
+			this.getView().byId("image").setSrc(data.picture);
+			this.getView().byId("image").setHeight("200px");
+		}
+		else{
+			this.getView().byId("image").setSrc("");
+			this.getView().byId("image").setHeight("0px");
+		}
+		
+		if(data.from!=null && data.from.name !=null)
+			this.getView().byId("fromtext").setText("Posted by: "+data.from.name);
+		else
+			this.getView().byId("fromtext").setText("");
+		
 		if(data.description!=null)
 			this.getView().byId("descriptiontext").setText("Description: "+data.description);
 		else

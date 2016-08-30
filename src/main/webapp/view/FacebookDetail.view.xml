@@ -18,6 +18,8 @@
 				<content>
 					<VBox>			
 						<Text text="" id="nametext" class="sapUiSmallMargin" design="Bold"/>
+						<Image height="200px" id="image" src="" class="sapUiSmallMargin"/>
+						<Text text="" id="fromtext" class="sapUiSmallMargin" design="Bold"/>
 						<HBox>
 							<Text text="Link to post: " class="sapUiSmallMargin" />
 							<Link text="" id="idtext" class="sapUiSmallMargin" target="_blank"/>				

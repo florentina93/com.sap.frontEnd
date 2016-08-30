@@ -25,6 +25,7 @@
 						<Text text="" id="ownerNametext" class="sapUiSmallMargin"/>
 						<Text text="" id="tagtext" class="sapUiSmallMargin"/>
 						<Text text="" id="creationDatetext" class="sapUiSmallMargin"/>	
+						<Text text="" id="answerCounttext" class="sapUiSmallMargin"/>	
 						<Text text="" id="bodytext" class="sapUiSmallMargin"/>		
 					</VBox>
 				</content>

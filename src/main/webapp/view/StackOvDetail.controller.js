@@ -28,6 +28,12 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvDetail", {
 			this.getView().byId("creationDatetext").setText("");
 		}
 		
+		if(data.answerCount != "") {
+			this.getView().byId("answerCounttext").setText("Nr. of answers: " + data.answerCount);			
+		} else {
+			this.getView().byId("answerCounttext").setText("Nr. of answers: 0");	
+		}
+		
 		if(data.tags != null){
 			this.getView().byId("tagtext").setText("Tags: " + data.tags);
 		}else {	
