@@ -34,6 +34,11 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookDetail", {
 		else
 			this.getView().byId("storytext").setText("");
 		
+		if(data.likes!=null)
+			this.getView().byId("likestext").setText("Nr. of likes: "+data.likes.data.length);
+		else
+			this.getView().byId("likestext").setText("");
+		
 		if(data.from!=null && data.from.name !=null)
 			this.getView().byId("fromtext").setText("Posted by: "+data.from.name);
 		else

@@ -25,6 +25,7 @@
 							<Link text="" id="idtext" class="sapUiSmallMargin" target="_blank"/>				
 						</HBox>		
 						<Text text="" id="storytext" class="sapUiSmallMargin"/>
+						<Text text="" id="likestext" class="sapUiSmallMargin"/>
 						<Text text="" id="messagetext" class="sapUiSmallMargin"/>
 						<Text text="" id="descriptiontext" class="sapUiSmallMargin"/>
 					</VBox>
