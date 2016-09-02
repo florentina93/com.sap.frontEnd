@@ -30,12 +30,12 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 		},
 	
 		handleSearch : function(evt){
-			var query = evt.getParameter("query");
+			var query = evt.getParameter("query").toLowerCase();
 			console.log("Query is: " + query);
 			//console.log(escape(this.getView().byId("radioGroup").getSelectedButton().getText()));
 			
 			var radioActive=this.getView().byId("radioGroup").getSelectedButton();
-			var radioName = radioActive.getId().substring(17, radioActive.getId().length);
+			var radioName = radioActive.getId().toLowerCase().substring(17, radioActive.getId().length)
 			console.log(radioName);
 			
 			if(query && query.length > 0 && (radioActive)) {

@@ -12,38 +12,38 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component",{
 			},
 			routes:[
 			        {
-			        	pattern:"StackOvMaster",
+			        	pattern:"stackovmaster",
 			        	name:"StackOvMaster",
 			        	view:"StackOvMaster",
 			        	targetAggregation:"masterPages",
 			        },
 			        {
-			        	pattern:"InitialView",
+			        	pattern:"home",
 			        	name:"InitialMaster",
 			        	view:"InitialMaster",
 			        	targetAggregation:"masterPages",
 			        },
 			        {
-			        	pattern:"FacebookMaster",
+			        	pattern:"facebookmaster",
 			        	name:"FacebookMaster",
 			        	view:"FacebookMaster",
 			        	targetAggregation:"masterPages",
 			        },
 			        {
-			        	pattern:"postDetail/{pId}",
+			        	pattern:"facebookdetails/postid/{pId}",
 			        	name:"postDetail",
 			        	view:"FacebookDetail",
 			        	targetAggregation:"detailPages",
 			        },
 			        {
-			        	pattern:"questionDetail/{qId}",
+			        	pattern:"stackoverdetails/questionid/{qId}",
 			        	name:"questionDetail",
 			        	view:"StackOvDetail",
 			        	targetAggregation:"detailPages",
 			        },
 
 			        {
-			        	pattern:"InitialDetail",
+			        	pattern:"initialdetail",
 			        	name:"InitialDetail",
 			        	view:"InitialDetail",
 			        	targetAggregation:"detailPages",
