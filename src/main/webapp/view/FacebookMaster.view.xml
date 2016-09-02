@@ -19,10 +19,10 @@
 		<VBox>
 			<Text text="Select where to search in posts"/>
 			<RadioButtonGroup id="radioGroup">
-				<RadioButton id="radioName" text="Name"/> 
-				<RadioButton id="radioDescription" text="Description"/>
-				<RadioButton id="radioMessage" text="Message"/>
-				<RadioButton id="radioLink" text="Link to post"/>
+				<RadioButton id="radioname" text="Name"/> 
+				<RadioButton id="radiodescription" text="Description"/>
+				<RadioButton id="radiomessage" text="Message"/>
+				<RadioButton id="radiolink" text="Link"/>
 			</RadioButtonGroup>
 		</VBox>
 		<List
@@ -31,7 +31,7 @@
 			mode="{device>/listMode}"
 			showNoData="false"
 			growing="true"
-            growingThreshold = "7"
+            growingThreshold = "9"
             growingTriggerText = "Scroll down for more"
             growingScrollToLoad = "true"
             >

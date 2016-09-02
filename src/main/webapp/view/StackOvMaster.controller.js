@@ -35,7 +35,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.StackOvMaster", {
 			//console.log(escape(this.getView().byId("radioGroup").getSelectedButton().getText()));
 			
 			var radioActive=this.getView().byId("radioGroup").getSelectedButton();
-			var radioName = radioActive.getId().toLowerCase().substring(17, radioActive.getId().length)
+			//var radioName = radioActive.getId().toLowerCase().substring(17, radioActive.getId().length)
+			radioName=radioActive.getText().toLowerCase().replace(" ","");
 			console.log(radioName);
 			
 			if(query && query.length > 0 && (radioActive)) {

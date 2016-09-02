@@ -55,6 +55,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookDetail", {
 			this.getView().byId("messagetext").setText("");
 		
 		if(data.id!=null){
+			this.getView().byId("linktext").setText("Link to post: ");
 			this.getView().byId("idtext").setText("http://fb.com/"+data.id);
 			this.getView().byId("idtext").setHref("http://fb.com/"+data.id);		
 		}
@@ -66,7 +67,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookDetail", {
 		
 		var oParameters = oEvent.getParameters();
 		var id = oParameters.arguments.pId;
-		var pathModel = "http://localhost:8080/com.sap.crawler/webapi/facebook/posts/Id/"+id;
+		var pathModel = "http://localhost:8080/com.sap.crawler/webapi/facebook/posts/postid/"+id;
 		if (oParameters.name !== "postDetail") {
 			return;
 		}

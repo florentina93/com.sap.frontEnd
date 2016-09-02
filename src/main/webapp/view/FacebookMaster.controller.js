@@ -45,13 +45,13 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 			while(i<data.length){
 				if(data[i].name==null){
 					data[i].icon="http://www.medikeen.com/site/wordpress/wp-content/uploads/2015/05/arrow-25-512.gif";
-					if(radioName=="Description"){
+					if(radioName=="description"){
 						data[i].name=data[i].description;
 					}
-					else if(radioName=="Message"){
+					else if(radioName=="message"){
 						data[i].name=data[i].message;
 					}
-					else if(radioName=="Link"){
+					else if(radioName=="link"){
 						data[i].name=data[i].id;
 					}
 				}
@@ -64,11 +64,12 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 		},
 		
 		handleSearch : function(evt){
-			var query = evt.getParameter("query");
+			var query = evt.getParameter("query").toLowerCase();
 			console.log("Query is: " + query);
 			
 			var radioActive=this.getView().byId("radioGroup").getSelectedButton();
-			radioName = radioActive.getId().substring(17, radioActive.getId().length);
+			//radioName = radioActive.getId().substring(17, radioActive.getId().length);
+			radioName=radioActive.getText().toLowerCase();
 			console.log(radioName);
 			
 			if(query && query.length > 0 && (radioActive)) {
@@ -83,10 +84,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 					//console.log(oModel.getData());
 					if(oModel.getData().length == 0) {
 						facebookController.byId("list").setShowNoData(true);
-						console.log("setting show no data on TRUE " + oModel.getData().length);
+						//console.log("setting show no data on TRUE " + oModel.getData().length);
 					} else {
 						facebookController.byId("list").setShowNoData(false);
-						console.log("setting show no data on FALSE " + oModel.getData().length);
+						//console.log("setting show no data on FALSE " + oModel.getData().length);
 
 					}
 					facebookController.printNames(oModel);

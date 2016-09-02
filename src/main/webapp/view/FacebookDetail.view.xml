@@ -21,7 +21,7 @@
 						<Image height="200px" id="image" src="" class="sapUiSmallMargin"/>
 						<Text text="" id="fromtext" class="sapUiSmallMargin" design="Bold"/>
 						<HBox>
-							<Text text="Link to post: " class="sapUiSmallMargin" />
+							<Text text="" id="linktext" class="sapUiSmallMargin" />
 							<Link text="" id="idtext" class="sapUiSmallMargin" target="_blank"/>				
 						</HBox>		
 						<Text text="" id="storytext" class="sapUiSmallMargin"/>
