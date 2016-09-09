@@ -22,7 +22,6 @@
 				<RadioButton id="radioname" text="Name"/> 
 				<RadioButton id="radiodescription" text="Description"/>
 				<RadioButton id="radiomessage" text="Message"/>
-				<RadioButton id="radiolink" text="Link"/>
 			</RadioButtonGroup>
 		</VBox>
 		<List

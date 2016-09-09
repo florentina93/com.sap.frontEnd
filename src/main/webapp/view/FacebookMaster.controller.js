@@ -51,9 +51,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.FacebookMaster", {
 					else if(radioName=="message"){
 						data[i].name=data[i].message;
 					}
-					else if(radioName=="link"){
-						data[i].name=data[i].id;
-					}
 				}
 				i++;
 			}
